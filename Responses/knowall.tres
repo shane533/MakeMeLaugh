@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://du8qa3urmb5u0"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_8t0gn"]
+
+[resource]
+script = ExtResource("1_8t0gn")
+_id = 303
+_contentEN = "Don't talk to me like that, there's nothing I don't know."
+_contentZH = "别这么跟我说话，没什么是我不懂的。"
