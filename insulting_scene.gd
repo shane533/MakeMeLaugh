@@ -25,6 +25,7 @@ const RESPONSE_POS:Vector2 = Vector2(450, 200)
 @export var insults_joe: Array[Insult]
 @export var responses_joe: Array[Response] 
 @export var responses_don: Array[Response]
+@export var default_responses: Array[Response]
 @export var insult_label: Label
 @export var response_label: Label
 @export var is_zh: bool = true
@@ -37,8 +38,11 @@ var _selecting_insult: Insult
 var _selecting_response: Response
 var _unused_insults: Array[Insult]
 var _options: Array[Option]
+var _is_ticking: bool
 
 func game_start(player_go_first:bool):
+	hide_game_over_panel()
+	stop_ticking()
 	hide_labels()
 	init_hps()
 	_is_player_go_first = player_go_first
@@ -46,6 +50,9 @@ func game_start(player_go_first:bool):
 	_unused_insults = insults_don.duplicate()
 	debug("Game Start")
 	next_state()
+	
+func hide_game_over_panel():
+	$GameOverPanel.visible = false
 
 func init_hps():
 	_player_hp = 3
@@ -92,7 +99,18 @@ func wait_for_player_response() -> GameState:
 	for i in range(3):
 		make_one_option(out[i]._id, get_response_content(out[i]))
 	debug("Wait for player response")
+	start_ticking()
 	return GameState.WaitForPlayerResponse
+
+func start_ticking():
+	_is_ticking = true
+	$OptionContainer/ProgressBar.visible = true
+	$OptionContainer/ProgressBar.value = 0
+
+func stop_ticking():
+	_is_ticking = false
+	$OptionContainer/ProgressBar.visible = false
+	$OptionContainer/ProgressBar.value = 0
 
 func enemy_insult() -> GameState:
 	hide_labels()
@@ -207,6 +225,11 @@ func is_game_over() -> bool:
 func game_over() -> GameState:
 	var sprite:AnimatedSprite2D = $PlayerSprite2D if _player_hp == 0 else $EnemySprite2D
 	sprite.play("die")
+	hide_labels()
+	$GameOverPanel.self_modulate.a = 0.01
+	$GameOverPanel.visible = true
+	var tween = create_tween()
+	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
 	return GameState.GameOver
 
 func settle_damage(is_player_insult: bool) -> GameState:
@@ -258,8 +281,15 @@ func on_option_selected(id):
 		_unused_insults.erase(_selecting_insult)
 		next_state()
 	elif _state == GameState.WaitForPlayerResponse:
+		stop_ticking()
 		_selecting_response = get_response_by_id(id)
 		next_state()
+		
+func select_default_response():
+	debug("Ticking select default response")
+	stop_ticking()
+	_selecting_response = default_responses.pick_random()
+	next_state()
 
 func get_insult_by_id(id) -> Insult:
 	for ins in insults_don:
@@ -301,7 +331,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if _is_ticking:
+		$OptionContainer/ProgressBar.value += delta * (100/3)
+		if $OptionContainer/ProgressBar.value >= 100:
+			select_default_response()
 	pass
 	
 func debug(str: String):
 	print( "[%d] %s" %[ Time.get_ticks_msec() ,str])
+
+
+func _on_button_pressed():
+	game_start(randi()%2==0)
+	pass # Replace with function body.

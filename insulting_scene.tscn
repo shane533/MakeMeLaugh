@@ -1,9 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=44 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Texture2D" uid="uid://csc3wouyitg1" path="res://PNG/blue_panel.png" id="2_tq6rj"]
 [ext_resource type="Resource" uid="uid://63757bkhg7mq" path="res://Insults/apes.tres" id="2_ulf60"]
-[ext_resource type="Script" path="res://character.gd" id="2_v6gya"]
 [ext_resource type="Resource" uid="uid://b6pbahnecymw8" path="res://Insults/diaper.tres" id="3_4hrsk"]
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="4_5csni"]
 [ext_resource type="Resource" uid="uid://chbcdu6sne6g5" path="res://Insults/dog.tres" id="4_wj31x"]
@@ -20,6 +19,9 @@
 [ext_resource type="Resource" uid="uid://v76pi8rx3in5" path="res://Responses/reunion.tres" id="10_1dccu"]
 [ext_resource type="Texture2D" uid="uid://bnp2igtbbij5s" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_6.png" id="10_yqg3x"]
 [ext_resource type="Resource" uid="uid://bew4md5udeisd" path="res://Responses/taught.tres" id="11_ku1dh"]
+[ext_resource type="Resource" uid="uid://csfv6ei54c0ls" path="res://Responses/fakenews.tres" id="12_ljpic"]
+[ext_resource type="Resource" uid="uid://dtowvoccv0uke" path="res://Responses/ridiculous.tres" id="13_y0or7"]
+[ext_resource type="Resource" uid="uid://du8qa3urmb5u0" path="res://Responses/knowall.tres" id="14_dlp4g"]
 [ext_resource type="Texture2D" uid="uid://der52arcktkib" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_0.png" id="21_cugbm"]
 [ext_resource type="Texture2D" uid="uid://bfs8ekxkj6uiy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_1.png" id="22_a4x18"]
 [ext_resource type="Texture2D" uid="uid://cfj5jh4dqrkbj" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_0.png" id="23_f7wfn"]
@@ -139,12 +141,16 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
 font_size = 36
 
+[sub_resource type="LabelSettings" id="LabelSettings_lgtil"]
+font_size = 48
+
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label")]
 script = ExtResource("1_58qa0")
 insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
 insults_joe = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
 responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
 responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
+default_responses = Array[Resource("res://response.gd")]([ExtResource("12_ljpic"), ExtResource("13_y0or7"), ExtResource("14_dlp4g")])
 insult_label = NodePath("InsultLabel")
 response_label = NodePath("ResponseLabel")
 
@@ -152,11 +158,6 @@ response_label = NodePath("ResponseLabel")
 scale = Vector2(12.8, 7.2)
 texture = ExtResource("2_tq6rj")
 centered = false
-
-[node name="PlayerAvatar" type="Sprite2D" parent="."]
-script = ExtResource("2_v6gya")
-
-[node name="EnemyAvatar" type="Sprite2D" parent="."]
 
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(270, 454)
@@ -199,22 +200,18 @@ offset_right = 664.0
 offset_bottom = 406.0
 text = "怎么，你想借一条用吗？"
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-custom_minimum_size = Vector2(200, 5)
-offset_left = 534.0
-offset_top = 533.0
-offset_right = 734.0
-offset_bottom = 538.0
-value = 60.0
-nine_patch_stretch = true
-tint_under = Color(0, 1, 0, 1)
-tint_progress = Color(1, 0, 0, 1)
-
 [node name="OptionContainer" type="VBoxContainer" parent="."]
 offset_left = 534.0
 offset_top = 533.0
 offset_right = 574.0
 offset_bottom = 573.0
+
+[node name="ProgressBar" type="ProgressBar" parent="OptionContainer"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+value = 50.0
+show_percentage = false
 
 [node name="InsultLabel" type="Label" parent="."]
 offset_left = 344.0
@@ -232,3 +229,28 @@ offset_bottom = 274.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 autowrap_mode = 2
+
+[node name="GameOverPanel" type="Panel" parent="."]
+offset_left = 369.0
+offset_top = 71.0
+offset_right = 969.0
+offset_bottom = 271.0
+
+[node name="Label" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 30.0
+offset_right = 423.0
+offset_bottom = 97.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_lgtil")
+
+[node name="Button" type="Button" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 127.0
+offset_right = 338.0
+offset_bottom = 177.0
+text = "Retry"
+
+[connection signal="pressed" from="GameOverPanel/Button" to="." method="_on_button_pressed"]
