@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://dtowvoccv0uke"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_2x874"]
+
+[resource]
+script = ExtResource("1_2x874")
+_id = 203
+_contentEN = "He must have taught you everything you know."
+_contentZH = "看来它把你教得挺好"
