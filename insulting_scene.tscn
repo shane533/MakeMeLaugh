@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=41 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Texture2D" uid="uid://csc3wouyitg1" path="res://PNG/blue_panel.png" id="2_tq6rj"]
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_yqg3x")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 5.0
 }, {
@@ -133,6 +133,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_kk7xp"]
+font_size = 24
+
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
 font_size = 36
 
@@ -157,15 +160,33 @@ script = ExtResource("2_v6gya")
 position = Vector2(270, 454)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"hurt"
+animation = &"die"
 autoplay = "idle"
+
+[node name="PlayerHPLabel" type="Label" parent="."]
+offset_left = 194.0
+offset_top = 219.0
+offset_right = 248.0
+offset_bottom = 253.0
+text = "HP:3
+"
+label_settings = SubResource("LabelSettings_kk7xp")
 
 [node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1079, 457)
 scale = Vector2(-10, 10)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"hurt"
+animation = &"die"
 autoplay = "idle"
+
+[node name="EnemyHPLabel" type="Label" parent="."]
+offset_left = 1094.0
+offset_top = 225.0
+offset_right = 1148.0
+offset_bottom = 259.0
+text = "HP:3
+"
+label_settings = SubResource("LabelSettings_kk7xp")
 
 [node name="PunchLineLabel" type="RichTextLabel" parent="."]
 visible = false
