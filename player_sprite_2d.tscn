@@ -247,5 +247,5 @@ animations = [{
 position = Vector2(220, 391)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"punch"
+animation = &"use"
 autoplay = "idle"
