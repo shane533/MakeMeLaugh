@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=55 format=3 uid="uid://bt0dtnx24fgq7"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -20,7 +20,7 @@
 [ext_resource type="Resource" uid="uid://dffnu3d8rpo0n" path="res://Insults/voice.tres" id="12_7ka5i"]
 [ext_resource type="Resource" uid="uid://csfv6ei54c0ls" path="res://Responses/fakenews.tres" id="12_ljpic"]
 [ext_resource type="Resource" uid="uid://dtowvoccv0uke" path="res://Responses/ridiculous.tres" id="13_y0or7"]
-[ext_resource type="Resource" uid="uid://du8qa3urmb5u0" path="res://Responses/knowall.tres" id="14_dlp4g"]
+[ext_resource type="Resource" uid="uid://kswokbnwv05b" path="res://Responses/knowall.tres" id="14_dlp4g"]
 [ext_resource type="Resource" uid="uid://ei45jw8niood" path="res://Insults/ideas.tres" id="14_qnee8"]
 [ext_resource type="Texture2D" uid="uid://c8iefvxr4xp3v" path="res://BattleScene/1.png" id="15_awv0j"]
 [ext_resource type="Resource" uid="uid://d0u6361bccvki" path="res://Insults/stupid.tres" id="15_l6xmc"]
@@ -33,12 +33,12 @@
 [ext_resource type="Resource" uid="uid://bdo5vg48dr4lg" path="res://Responses/understand.tres" id="24_kf3dx"]
 [ext_resource type="Texture2D" uid="uid://dwrfehoaxayu2" path="res://PNG/Building3.png" id="32_6dmmv"]
 [ext_resource type="Texture2D" uid="uid://dni4i7dljbq1l" path="res://UI/webpage.png" id="32_tbux1"]
-[ext_resource type="PackedScene" uid="uid://1i6ewd6tc6bs" path="res://player_sprite_2d.tscn" id="33_163od"]
+[ext_resource type="PackedScene" uid="uid://c8jqjyqs7b5rj" path="res://player_sprite_2d.tscn" id="33_163od"]
 [ext_resource type="Texture2D" uid="uid://dbsagv13rv7vr" path="res://PNG/Building2.png" id="33_mko7v"]
 [ext_resource type="Texture2D" uid="uid://cuq3vck0urev6" path="res://PNG/Building1.png" id="34_6ix10"]
 [ext_resource type="Texture2D" uid="uid://co6a8mlbblvdr" path="res://UI/hp_bar_2.png" id="34_ccysa"]
 [ext_resource type="Texture2D" uid="uid://j4en0053cfve" path="res://UI/hp_bar_1.png" id="35_aoeqr"]
-[ext_resource type="PackedScene" uid="uid://dhwmyag1o4y50" path="res://enemy_sprite_2d.tscn" id="36_0u3lk"]
+[ext_resource type="PackedScene" uid="uid://bcj6culq70bj1" path="res://enemy_sprite_2d.tscn" id="36_0u3lk"]
 [ext_resource type="Script" path="res://hp_bar.gd" id="38_ssxds"]
 [ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="40_tpnsh"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
@@ -102,7 +102,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label", "player_hp", "enemy_hp")]
+[node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label")]
 script = ExtResource("1_58qa0")
 insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_pfpcq"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
 insults_joe_2020 = Array[Resource("res://insult.gd")]([ExtResource("7_gk7bb"), ExtResource("8_tq2c0")])
@@ -113,8 +113,6 @@ default_responses_don = Array[Resource("res://response.gd")]([ExtResource("12_lj
 default_responses_joe = Array[Resource("res://response.gd")]([ExtResource("15_o12kc"), ExtResource("16_nhm88"), ExtResource("17_pdeto")])
 insult_label = NodePath("InsultLabel")
 response_label = NodePath("ResponseLabel")
-player_hp = NodePath("PlayerHP")
-enemy_hp = NodePath("EnemyHP")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("15_awv0j")
