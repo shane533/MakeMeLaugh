@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=124 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -72,6 +72,44 @@
 [ext_resource type="Texture2D" uid="uid://c25qbcbc483uh" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_10.png" id="50_550c8"]
 [ext_resource type="Texture2D" uid="uid://ntbiqj0vc0gm" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_11.png" id="51_mnfk0"]
 [ext_resource type="Texture2D" uid="uid://bcf26hpbr7kue" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_12.png" id="52_o2fpm"]
+[ext_resource type="Texture2D" uid="uid://dqry4utv13ggo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_00.png" id="56_hfrr2"]
+[ext_resource type="Texture2D" uid="uid://bb3bsrnhlpvkw" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_01.png" id="57_siahk"]
+[ext_resource type="Texture2D" uid="uid://dio18qcjbk5gn" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_02.png" id="58_47k50"]
+[ext_resource type="Texture2D" uid="uid://clbsflnbtu75g" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_03.png" id="59_pyat8"]
+[ext_resource type="Texture2D" uid="uid://cuthaijctqmly" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_04.png" id="60_kvwpp"]
+[ext_resource type="Texture2D" uid="uid://c7j8dg6i0egjr" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_05.png" id="61_e52u1"]
+[ext_resource type="Texture2D" uid="uid://cao6teo013nu6" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_06.png" id="62_ltppl"]
+[ext_resource type="Texture2D" uid="uid://bod08b6qweovd" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_07.png" id="63_xxbuh"]
+[ext_resource type="Texture2D" uid="uid://cs56j2qsna0lr" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_08.png" id="64_m5un0"]
+[ext_resource type="Texture2D" uid="uid://cubndbwdobh33" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_09.png" id="65_kqnym"]
+[ext_resource type="Texture2D" uid="uid://vdbj4gmifbyd" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_10.png" id="66_5sbqm"]
+[ext_resource type="Texture2D" uid="uid://bktq1aeb7xdd8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_11.png" id="67_h8qna"]
+[ext_resource type="Texture2D" uid="uid://b6j87c3wmifb8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_12.png" id="68_pjjqo"]
+[ext_resource type="Texture2D" uid="uid://hg6hwfuwu51m" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_0.png" id="69_dkuuj"]
+[ext_resource type="Texture2D" uid="uid://bl3vasubh5qks" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_1.png" id="70_lw5ov"]
+[ext_resource type="Texture2D" uid="uid://c3wvmcc5qw0ae" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_2.png" id="71_ujpau"]
+[ext_resource type="Texture2D" uid="uid://cwyf7cq1clasi" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_3.png" id="72_3x10g"]
+[ext_resource type="Texture2D" uid="uid://v4sorbdlh077" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_4.png" id="73_sjcgx"]
+[ext_resource type="Texture2D" uid="uid://bfdt6khcki2a0" path="res://Freebie Pixel Emojis.png" id="73_x8cj3"]
+[ext_resource type="Texture2D" uid="uid://csq7tukgoq5dx" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_5.png" id="74_phna8"]
+[ext_resource type="Texture2D" uid="uid://w1uecrxadcee" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_6.png" id="75_7va4t"]
+[ext_resource type="Texture2D" uid="uid://i1d6nnrw3b5b" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_damage_0.png" id="76_vp4u1"]
+[ext_resource type="Texture2D" uid="uid://wcl6kk3vta8l" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_damage_1.png" id="77_0pbvr"]
+[ext_resource type="Texture2D" uid="uid://dr724m6g78c0f" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_0.png" id="78_nq7g4"]
+[ext_resource type="Texture2D" uid="uid://bnuvq8hm0jgyv" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_1.png" id="79_umhtq"]
+[ext_resource type="Texture2D" uid="uid://dse7442epsh2v" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_2.png" id="80_o5mqr"]
+[ext_resource type="Texture2D" uid="uid://ikglrpnaebo3" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_3.png" id="81_g6r63"]
+[ext_resource type="Texture2D" uid="uid://dwe1dx6pitnr6" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_4.png" id="82_hj0vr"]
+[ext_resource type="Texture2D" uid="uid://c147qurp60y0d" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_5.png" id="83_jgsyy"]
+[ext_resource type="Texture2D" uid="uid://bcbyai1i1qv6p" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_6.png" id="84_omd18"]
+[ext_resource type="Texture2D" uid="uid://dt1w3xdji8ars" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_7.png" id="85_kn17w"]
+[ext_resource type="Texture2D" uid="uid://dbv2lpbq0ipoj" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_0.png" id="86_y5qgo"]
+[ext_resource type="Texture2D" uid="uid://dbmou6vngqwfx" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_1.png" id="87_0jqnw"]
+[ext_resource type="Texture2D" uid="uid://c5cwhu1k8r1f2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_2.png" id="88_8ftuc"]
+[ext_resource type="Texture2D" uid="uid://bg2g7mcenci1r" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_3.png" id="89_7peka"]
+[ext_resource type="Texture2D" uid="uid://cgwppt7muk6ix" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_4.png" id="90_fkuxi"]
+[ext_resource type="Texture2D" uid="uid://drourbtq77ri2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_5.png" id="91_2vleb"]
+[ext_resource type="Texture2D" uid="uid://bq61fkxnfkv6k" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_6.png" id="92_1r66o"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npx5q"]
 load_path = "res://.godot/imported/2.png-b4bb4e73f41b318e86d3ea875a10ea27.ctex"
@@ -172,6 +210,148 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("56_hfrr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_siahk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_47k50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_pyat8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_kvwpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_e52u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_ltppl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_xxbuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_m5un0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_kqnym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_5sbqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h8qna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_pjjqo")
+}],
+"loop": true,
+"name": &"use",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kk7xp"]
+font_size = 24
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aop4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("69_dkuuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_lw5ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ujpau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_3x10g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_sjcgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_phna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_7va4t")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_vp4u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_0pbvr")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78_nq7g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_umhtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_o5mqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_g6r63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_hj0vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_jgsyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_omd18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_kn17w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_y5qgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_0jqnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_8ftuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_7peka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_fkuxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_2vleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_1r66o")
+}],
+"loop": false,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("40_dajp6")
 }, {
 "duration": 1.0,
@@ -210,19 +390,66 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_o2fpm")
 }],
-"loop": true,
+"loop": false,
 "name": &"use",
 "speed": 5.0
 }]
-
-[sub_resource type="LabelSettings" id="LabelSettings_kk7xp"]
-font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
 font_size = 36
 
 [sub_resource type="LabelSettings" id="LabelSettings_lgtil"]
 font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwvg3"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(2, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4cvo"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(22, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ax1"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(42, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lihnh"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(62, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs0b4"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(82, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnv3a"]
+atlas = ExtResource("73_x8cj3")
+region = Rect2(102, 0, 20, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux3at"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwvg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4cvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ax1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lihnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs0b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnv3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label")]
 script = ExtResource("1_58qa0")
@@ -243,7 +470,6 @@ centered = false
 [node name="Crowd" type="Node" parent="Background"]
 
 [node name="Layer1" type="Sprite2D" parent="Background"]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(2.21875, 2.21914)
 texture = SubResource("CompressedTexture2D_npx5q")
@@ -253,8 +479,12 @@ centered = false
 position = Vector2(220, 391)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"die"
+animation = &"use"
 autoplay = "idle"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="PlayerHPBar" type="ProgressBar" parent="."]
 modulate = Color(1, 0.054902, 0.388235, 1)
@@ -279,7 +509,7 @@ label_settings = SubResource("LabelSettings_kk7xp")
 [node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1101, 391)
 scale = Vector2(-7, 7)
-sprite_frames = SubResource("SpriteFrames_npjga")
+sprite_frames = SubResource("SpriteFrames_5aop4")
 animation = &"use"
 autoplay = "idle"
 
@@ -381,5 +611,10 @@ stream = ExtResource("42_sgxbe")
 
 [node name="LaughSFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("43_eq60d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 199)
+sprite_frames = SubResource("SpriteFrames_ux3at")
+frame = 4
 
 [connection signal="pressed" from="GameOverPanel/Button" to="." method="_on_button_pressed"]
