@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_2csg5")
 _id = 202
-_contentEN = "Did you finish your lullaby?"
+_contentEN = "Have you finished your lullaby?"
 _contentZH = "你的摇篮曲唱完了吗？"

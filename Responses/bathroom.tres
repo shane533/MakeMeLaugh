@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_y721q")
 _id = 506
-_contentEN = "I have to go to the bathroom"
-_contentZH = "我要去趟洗手间"
+_contentEN = "er...I have to go to the bathroom"
+_contentZH = "呃...我要去趟洗手间"

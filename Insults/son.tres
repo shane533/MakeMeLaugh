@@ -7,4 +7,4 @@ script = ExtResource("1_cdgwe")
 _id = 303
 _contentEN = "My son did not do a single thing wrong!"
 _contentZH = "我儿子没做错任何事!"
-_responses = Array[int]([202])
+_responses = Array[int]([213])

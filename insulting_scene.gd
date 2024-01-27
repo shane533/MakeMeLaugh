@@ -139,7 +139,7 @@ func stop_ticking():
 func enemy_insulting() -> GameState:
 	hide_labels()
 	idle_characters()
-	if _global._is_2020:
+	if _global.is_2020:
 		_selecting_insult = insults_joe_2020.pick_random()
 		insults_joe_2020.erase(_selecting_insult)
 	else:
@@ -273,14 +273,23 @@ func game_over() -> GameState:
 	sprite2.play("use")
 	final_audience_cheer(not is_player_die)
 	hide_labels()
-	show_game_over_panel()
+	show_game_over_panel(is_player_die)
 	
 	return GameState.GameOver
 
-func show_game_over_panel():
+func show_game_over_panel(is_player_die: bool):
 	$GameOverPanel.self_modulate.a = 0.01
 	$GameOverPanel.visible = true
-	$GameOverPanel/Button.text = "NOOOOO!!!!"
+	if _global.is_2020:
+		$GameOverPanel/Label.text = "He CHEATED!"
+		$GameOverPanel/Button.text = "NOOOOO!!!!"
+	else:
+		if is_player_die:
+			$GameOverPanel/Label.text = "He CHEATED!"
+			$GameOverPanel/Button.text = "AGAIN!"
+		else:
+			$GameOverPanel/Label.text = "I am the PRESIDENT!!!"
+			$GameOverPanel/Button.text = "MAGA!"
 	var tween = create_tween()
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
 
@@ -332,6 +341,7 @@ func make_one_option(id:int, text:String):
 
 func on_option_selected(id):
 	debug("Option %d Selected!" % id)
+	$SFX/ButtonSFX.play()
 	if _state == GameState.WaitForPlayerInsult:
 		_selecting_insult = get_insult_by_id(id)
 		_unused_insults_don.erase(_selecting_insult)
@@ -399,7 +409,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if _is_ticking:
-		$OptionContainer/ProgressBar.value += delta * (100/3)
+		$OptionContainer/ProgressBar.value += delta * (100/5)
 		if $OptionContainer/ProgressBar.value >= 100:
 			select_default_response()
 	pass
@@ -413,8 +423,16 @@ func _on_button_pressed():
 		#TODO
 		_global.is_2020 = false
 		print("GO TO 2024")
+		$SFX/ButtonSFX.play()
+		var path = "res://scene_changer.tscn"
+		var time0 = get_tree().create_timer(0.1)
+		await time0.timeout
+		get_tree().change_scene_to_file(path)
 	else:
-		game_start(randi()%2==0)
+		if _player_hp == 0:
+			game_start(randi()%2==0)
+		else:
+			print("WIN, show credits")
 	pass # Replace with function body.
 	
 func init_audiences():

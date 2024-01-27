@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_w67ch")
 _id = 504
-_contentEN = "Where am I?"
-_contentZH = "我在哪儿呢？"
+_contentEN = "eh...Where am I?"
+_contentZH = "呃...我怎么在这儿？"

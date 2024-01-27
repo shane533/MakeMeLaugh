@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_7d7qv")
 _id = 505
-_contentEN = "That's not on the note."
-_contentZH = "我的卡片上没写这个"
+_contentEN = "er...That's not on the note."
+_contentZH = "呃...我的卡片上没写这个"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=57 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -41,15 +41,16 @@
 [ext_resource type="PackedScene" uid="uid://dhwmyag1o4y50" path="res://enemy_sprite_2d.tscn" id="36_0u3lk"]
 [ext_resource type="Script" path="res://hp_bar.gd" id="38_ssxds"]
 [ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="40_tpnsh"]
-[ext_resource type="FontFile" uid="uid://bvwdpbf6hdtr5" path="res://Chars/Male/Character 2/Clothes 2/MZPXorig.ttf" id="41_2xn8e"]
+[ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="41_dvdmw"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
 [ext_resource type="AudioStream" uid="uid://csi2ktjfv337k" path="res://SFX/crowd_shocked.wav" id="42_sgxbe"]
 [ext_resource type="AudioStream" uid="uid://27b84qpvcen5" path="res://SFX/laughandcheers.wav" id="43_eq60d"]
+[ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="46_uv2sf"]
 [ext_resource type="Texture2D" uid="uid://bfdt6khcki2a0" path="res://Freebie Pixel Emojis.png" id="73_x8cj3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
 line_spacing = 1.0
-font = ExtResource("41_2xn8e")
+font = ExtResource("41_dvdmw")
 font_size = 20
 font_color = Color(0.0196078, 0.0196078, 1, 1)
 
@@ -398,6 +399,9 @@ stream = ExtResource("42_sgxbe")
 
 [node name="LaughSFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("43_eq60d")
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("46_uv2sf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
