@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn2f7n06t3pgk"]
+
+[ext_resource type="Texture2D" uid="uid://dy7gb2mx6i3m8" path="res://UI/trump.png" id="1_23xeu"]
+[ext_resource type="Script" path="res://dialog.gd" id="1_ve2gj"]
+[ext_resource type="Texture2D" uid="uid://bjcgjn1mbba2n" path="res://UI/bubble.png" id="2_6nhpg"]
+[ext_resource type="Texture2D" uid="uid://cigwos57t3st3" path="res://UI/biden.png" id="2_l5uec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmuev"]
+font_color = Color(0.0156863, 0.0196078, 0.0156863, 1)
+
+[node name="Dialog" type="Control" node_paths=PackedStringArray("trump_icon", "biden_icon", "bubble_node", "bubble", "label")]
+custom_minimum_size = Vector2(300, 80)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ve2gj")
+trump_icon = NodePath("TrumpIcon")
+biden_icon = NodePath("BidenIcon")
+bubble_node = NodePath("Control")
+bubble = NodePath("Control/Bubble")
+label = NodePath("Control/Label")
+
+[node name="TrumpIcon" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_23xeu")
+
+[node name="BidenIcon" type="Sprite2D" parent="."]
+position = Vector2(800, 2.08165e-12)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_l5uec")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bubble" type="Sprite2D" parent="Control"]
+position = Vector2(217, -38)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_6nhpg")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -55.0
+offset_right = 276.0
+offset_bottom = -32.0
+text = "Have you stop wearing dipers?"
+label_settings = SubResource("LabelSettings_tmuev")

@@ -31,6 +31,7 @@ const RESPONSE_POS:Vector2 = Vector2(450, 200)
 @export var player_hp: HPBar
 @export var enemy_hp: HPBar
 #@export var is_zh: bool = true
+var _global: Node
 # 
 var _player_hp: int
 var _enemy_hp: int
@@ -45,7 +46,7 @@ var _is_ticking: bool
 var _left_audiences:Array[AnimatedSprite2D]
 var _right_audiences:Array[AnimatedSprite2D]
 var _is_2020: bool = true# 2020 is a war meant to lose
-var _global: Node
+var _dialogs:Array[Dialog]
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -212,12 +213,14 @@ func init_insult_label(ins: Insult, from_left: bool):
 	insult_label.text = get_insult_content(ins)
 	insult_label.position = LEFT_POS if from_left else RIGHT_POS
 	insult_label.scale = Vector2(0.2, 0.2)
+	add_dialog(from_left, get_insult_content(ins))
 	
 func init_response_label(res: Response, from_left: bool):
 	response_label.visible = true
 	response_label.text = get_response_content(res)
 	response_label.position = LEFT_POS if from_left else RIGHT_POS
 	response_label.scale = Vector2(0.2, 0.2)
+	add_dialog(from_left, get_response_content(res))
 
 func next_state():
 	match _state:
@@ -463,3 +466,19 @@ func audiences_stop():
 		ani.stop()
 	for ani in _right_audiences:
 		ani.stop()
+		
+func clear_dialogs():
+	for d in _dialogs:
+		$Background/Webpage/VBoxContainer.remove_child(d)
+		d.queue_free()
+	_dialogs.clear()
+		
+func add_dialog(is_trump:bool, text:String):
+	if len(_dialogs) >= 5:
+		var d = _dialogs.pop_front()
+		$Background/Webpage/VBoxContainer.remove_child(d)
+	var ds = load("res://dialog.tscn")
+	var dialog = ds.instantiate()
+	dialog.init(is_trump, text)
+	$Background/Webpage/VBoxContainer.add_child(dialog)
+	_dialogs.push_back(dialog)

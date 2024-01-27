@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_8seyc")
 _id = 201
-_contentEN = "Whay?Did you want to borrow one?"
+_contentEN = "Why?Did you want to borrow one?"
 _contentZH = "怎么，你想借一条用吗？"

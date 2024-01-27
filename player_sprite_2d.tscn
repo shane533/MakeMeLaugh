@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c8jqjyqs7b5rj"]
+[gd_scene load_steps=47 format=3 uid="uid://1i6ewd6tc6bs"]
 
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="1_2qr2d"]
 [ext_resource type="Texture2D" uid="uid://b8f44x486a3k3" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_1.png" id="2_n83n8"]
@@ -218,5 +218,5 @@ animations = [{
 position = Vector2(220, 391)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"walk"
+animation = &"die"
 autoplay = "idle"
