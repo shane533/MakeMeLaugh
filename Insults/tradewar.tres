@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://bjk1e4ra4q836"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_g36yy"]
+
+[resource]
+script = ExtResource("1_g36yy")
+_id = 601
+_contentEN = "You lost the trade war!"
+_contentZH = "你输掉了贸易战！"
+_responses = Array[int]([])

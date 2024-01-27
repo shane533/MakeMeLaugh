@@ -20,10 +20,12 @@ const INSULT_POS:Vector2 = Vector2(400, 150)
 const RESPONSE_POS:Vector2 = Vector2(450, 200)
 
 @export var insults_don: Array[Insult] 
-@export var insults_joe: Array[Insult]
+@export var insults_joe_2020: Array[Insult]
+@export var insults_joe_2024: Array[Insult]
 @export var responses_joe: Array[Response] 
 @export var responses_don: Array[Response]
-@export var default_responses: Array[Response]
+@export var default_responses_don: Array[Response]
+@export var default_responses_joe: Array[Response]
 @export var insult_label: Label
 @export var response_label: Label
 @export var is_zh: bool = true
@@ -34,11 +36,13 @@ var _is_player_go_first: bool
 var _state: GameState
 var _selecting_insult: Insult
 var _selecting_response: Response
-var _unused_insults: Array[Insult]
+var _unused_insults_don: Array[Insult]
+var _unused_insults_joe: Array[Insult]
 var _options: Array[Option]
 var _is_ticking: bool
 var _left_audiences:Array[AnimatedSprite2D]
 var _right_audiences:Array[AnimatedSprite2D]
+var _is_2020: bool = true# 2020 is a war meant to lose
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -47,7 +51,8 @@ func game_start(player_go_first:bool):
 	init_hps()
 	_is_player_go_first = player_go_first
 	_state = GameState.GameStart
-	_unused_insults = insults_don.duplicate()
+	_unused_insults_don = insults_don.duplicate()
+	_unused_insults_joe = insults_joe_2024.duplicate()
 	debug("Game Start")
 	next_state()
 	
@@ -84,24 +89,29 @@ func clear_options():
 func wait_for_player_insult() -> GameState:
 	hide_labels()
 	idle_characters()
-	if len(_unused_insults) < 3:
-		_unused_insults = insults_don.duplicate()
-	_unused_insults.shuffle()
+	if len(_unused_insults_don) < 3:
+		_unused_insults_don = insults_don.duplicate()
+	_unused_insults_don.shuffle()
 	clear_options()
 	for i in range(3):
-		make_one_option(_unused_insults[i]._id, get_insult_content(_unused_insults[i]))
+		make_one_option(_unused_insults_don[i]._id, get_insult_content(_unused_insults_don[i]))
 	debug("Wait for player insult")
 	return GameState.WaitForPlayerInsult
 	
 func wait_for_player_response() -> GameState:
 	clear_options()
-	var res:Response = get_response_by_id(_selecting_insult._responses[0]) 
-	var candis = responses_don.duplicate()
-	candis.erase(res)
-	candis.shuffle()
-	var out = candis.slice(0, 2)
-	out.push_back(res)
-	out.shuffle()
+	var out:Array
+	if _is_2020:
+		out = default_responses_don.duplicate()
+		out.shuffle()
+	else:
+		var res:Response = get_response_by_id(_selecting_insult._responses[0]) 
+		var candis = responses_don.duplicate()
+		candis.erase(res)
+		candis.shuffle()
+		out = candis.slice(0, 2)
+		out.push_back(res)
+		out.shuffle()
 	for i in range(3):
 		make_one_option(out[i]._id, get_response_content(out[i]))
 	debug("Wait for player response")
@@ -121,7 +131,12 @@ func stop_ticking():
 func enemy_insulting() -> GameState:
 	hide_labels()
 	idle_characters()
-	_selecting_insult = insults_joe.pick_random()
+	if _is_2020:
+		_selecting_insult = insults_joe_2020.pick_random()
+		insults_joe_2020.erase(_selecting_insult)
+	else:
+		_unused_insults_joe.shuffle()
+		_selecting_insult = _unused_insults_joe.pop_front()
 	init_insult_label(_selecting_insult, false)
 	debug("Enemy Insult")
 	$EnemySprite2D.play("talk")
@@ -149,8 +164,11 @@ func player_insulting() -> GameState:
 	
 func enemy_responsing() -> GameState:
 	#if enemy must won
-	var res_id = _selecting_insult._responses[0]
-	_selecting_response = get_response_by_id(res_id)
+	if _is_2020 or randi()%2==0:
+		var res_id = _selecting_insult._responses[0]
+		_selecting_response = get_response_by_id(res_id)
+	else:
+		_selecting_response = default_responses_joe.pick_random()
 	init_response_label(_selecting_response, false)
 	$EnemySprite2D.play("talk")
 	$PlayerSprite2D.play("idle")
@@ -301,7 +319,7 @@ func on_option_selected(id):
 	debug("Option %d Selected!" % id)
 	if _state == GameState.WaitForPlayerInsult:
 		_selecting_insult = get_insult_by_id(id)
-		_unused_insults.erase(_selecting_insult)
+		_unused_insults_don.erase(_selecting_insult)
 		next_state()
 	elif _state == GameState.WaitForPlayerResponse:
 		stop_ticking()
@@ -311,17 +329,20 @@ func on_option_selected(id):
 func select_default_response():
 	debug("Ticking select default response")
 	stop_ticking()
-	_selecting_response = default_responses.pick_random()
+	_selecting_response = default_responses_don.pick_random()
 	next_state()
 
 func get_insult_by_id(id) -> Insult:
 	for ins in insults_don:
 		if ins._id == id:
 			return ins
-	for ins in insults_joe:
+	for ins in insults_joe_2020:
 		if ins._id == id:
 			return ins
-			
+	for ins in insults_joe_2024:
+		if ins._id == id:
+			return ins
+					
 	return null
 
 func get_response_by_id(id) -> Response:

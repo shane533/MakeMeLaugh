@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2y4llq5oj2f3"
-path="res://.godot/imported/2.png-b4bb4e73f41b318e86d3ea875a10ea27.ctex"
+uid="uid://bfdt6khcki2a0"
+path="res://.godot/imported/Freebie Pixel Emojis.png-7f5e7f33d20e95c4b10f05c4ed8969d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BattleScene/2.png"
-dest_files=["res://.godot/imported/2.png-b4bb4e73f41b318e86d3ea875a10ea27.ctex"]
+source_file="res://Freebie Pixel Emojis.png"
+dest_files=["res://.godot/imported/Freebie Pixel Emojis.png-7f5e7f33d20e95c4b10f05c4ed8969d4.ctex"]
 
 [params]
 

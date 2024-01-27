@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://bme2f3geg5ttp"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_6hqjq"]
+
+[resource]
+script = ExtResource("1_6hqjq")
+_id = 206
+_contentEN = "Just to make sure you'd feel comfortable with me."
+_contentZH = "这只是为了让你感觉亲切一点。"

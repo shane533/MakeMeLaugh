@@ -13,4 +13,4 @@ func _ready():
 		await time1.timeout
 	var time2 = get_tree().create_timer(3)
 	await time2.timeout
-	get_tree().change_scene_to_file(path)
+	self.get_tree().change_scene_to_file(path)

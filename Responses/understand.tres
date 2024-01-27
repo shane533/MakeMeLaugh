@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://bdo5vg48dr4lg"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_gjppm"]
+
+[resource]
+script = ExtResource("1_gjppm")
+_id = 215
+_contentEN = "Of course I have, but you can't understand them"
+_contentZH = "当然有了，可惜你听不懂。"

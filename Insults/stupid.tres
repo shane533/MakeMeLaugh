@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://d0u6361bccvki"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_groa8"]
+
+[resource]
+script = ExtResource("1_groa8")
+_id = 301
+_contentEN = "Every word you say to me is stupid."
+_contentZH = "你说的每一句话都那么愚蠢"
+_responses = Array[int]([206])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://cvvkqk4nnc18"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_y721q"]
+
+[resource]
+script = ExtResource("1_y721q")
+_id = 506
+_contentEN = "I have to go to the bathroom"
+_contentZH = "我要去趟洗手间"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://cq8mps7nn7vs7"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_xa8f4"]
+
+[resource]
+script = ExtResource("1_xa8f4")
+_id = 106
+_contentEN = "Sleepy Joe can't even finish a single line."
+_contentZH = "瞌睡乔连话都讲不利索"
+_responses = Array[int]([206])

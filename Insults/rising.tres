@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://0p76cclwwq40"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_fjmlq"]
+
+[resource]
+script = ExtResource("1_fjmlq")
+_id = 302
+_contentEN = "Our stock makret is rising!"
+_contentZH = "我们的股市节节高升"
+_responses = Array[int]([212])
