@@ -139,6 +139,12 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("32_tbux1")
 centered = false
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Webpage"]
+offset_left = 261.0
+offset_top = 182.0
+offset_right = 301.0
+offset_bottom = 222.0
+
 [node name="PlayerSprite2D" parent="." instance=ExtResource("33_163od")]
 position = Vector2(142, 524)
 
@@ -375,6 +381,7 @@ stream = ExtResource("42_sgxbe")
 stream = ExtResource("43_eq60d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(96, 199)
 sprite_frames = SubResource("SpriteFrames_ux3at")
 frame = 4
