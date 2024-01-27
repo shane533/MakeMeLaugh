@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=56 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -41,13 +41,17 @@
 [ext_resource type="PackedScene" uid="uid://dhwmyag1o4y50" path="res://enemy_sprite_2d.tscn" id="36_0u3lk"]
 [ext_resource type="Script" path="res://hp_bar.gd" id="38_ssxds"]
 [ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="40_tpnsh"]
+[ext_resource type="FontFile" uid="uid://bvwdpbf6hdtr5" path="res://Chars/Male/Character 2/Clothes 2/MZPXorig.ttf" id="41_2xn8e"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
 [ext_resource type="AudioStream" uid="uid://csi2ktjfv337k" path="res://SFX/crowd_shocked.wav" id="42_sgxbe"]
 [ext_resource type="AudioStream" uid="uid://27b84qpvcen5" path="res://SFX/laughandcheers.wav" id="43_eq60d"]
 [ext_resource type="Texture2D" uid="uid://bfdt6khcki2a0" path="res://Freebie Pixel Emojis.png" id="73_x8cj3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
-font_size = 36
+line_spacing = 1.0
+font = ExtResource("41_2xn8e")
+font_size = 20
+font_color = Color(0.0196078, 0.0196078, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lgtil"]
 font_size = 48
@@ -102,7 +106,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label", "player_hp", "enemy_hp")]
+[node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_panel", "insult_label_", "response_panel", "response_label_", "player_hp", "enemy_hp")]
 script = ExtResource("1_58qa0")
 insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_pfpcq"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
 insults_joe_2020 = Array[Resource("res://insult.gd")]([ExtResource("7_gk7bb"), ExtResource("8_tq2c0")])
@@ -111,8 +115,10 @@ responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), Ex
 responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("21_tegw8"), ExtResource("22_ska3p"), ExtResource("23_qkt2l"), ExtResource("24_kf3dx")])
 default_responses_don = Array[Resource("res://response.gd")]([ExtResource("12_ljpic"), ExtResource("13_y0or7"), ExtResource("14_dlp4g")])
 default_responses_joe = Array[Resource("res://response.gd")]([ExtResource("15_o12kc"), ExtResource("16_nhm88"), ExtResource("17_pdeto")])
-insult_label = NodePath("InsultLabel")
-response_label = NodePath("ResponseLabel")
+insult_panel = NodePath("Insult")
+insult_label_ = NodePath("Insult/InsultLabel")
+response_panel = NodePath("Response")
+response_label_ = NodePath("Response/ResponseLabel")
 player_hp = NodePath("PlayerHP")
 enemy_hp = NodePath("EnemyHP")
 
@@ -149,7 +155,7 @@ offset_bottom = 222.0
 position = Vector2(142, 524)
 
 [node name="PlayerHP" type="Sprite2D" parent="." node_paths=PackedStringArray("_hps")]
-position = Vector2(2, 160)
+position = Vector2(2, 120)
 texture = ExtResource("34_ccysa")
 centered = false
 script = ExtResource("38_ssxds")
@@ -224,7 +230,7 @@ size_flags_vertical = 6
 texture = ExtResource("35_aoeqr")
 
 [node name="EnemyHP" type="Sprite2D" parent="." node_paths=PackedStringArray("_hps")]
-position = Vector2(1180, 160)
+position = Vector2(1180, 120)
 texture = ExtResource("34_ccysa")
 centered = false
 script = ExtResource("38_ssxds")
@@ -311,9 +317,9 @@ offset_bottom = 406.0
 text = "怎么，你想借一条用吗？"
 
 [node name="OptionContainer" type="VBoxContainer" parent="."]
-offset_left = 534.0
+offset_left = 450.0
 offset_top = 453.0
-offset_right = 734.0
+offset_right = 650.0
 offset_bottom = 493.0
 
 [node name="ProgressBar" type="ProgressBar" parent="OptionContainer"]
@@ -323,25 +329,38 @@ layout_mode = 2
 value = 50.0
 show_percentage = false
 
-[node name="InsultLabel" type="Label" parent="."]
-offset_left = 344.0
-offset_top = 127.0
-offset_right = 872.0
-offset_bottom = 195.0
+[node name="Insult" type="Node2D" parent="."]
+position = Vector2(534, 453)
+
+[node name="InsultPanel" type="Sprite2D" parent="Insult"]
+position = Vector2(-28, 72)
+rotation = 4.71239
+texture = ExtResource("34_ccysa")
+centered = false
+
+[node name="InsultLabel" type="Label" parent="Insult"]
+offset_right = 528.0
+offset_bottom = 68.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 
-[node name="ResponseLabel" type="Label" parent="."]
-offset_left = 448.0
-offset_top = 206.0
-offset_right = 976.0
-offset_bottom = 274.0
+[node name="Response" type="Node2D" parent="."]
+position = Vector2(448, 206)
+
+[node name="InsultPanel" type="Sprite2D" parent="Response"]
+position = Vector2(-28, 74)
+rotation = 4.71239
+texture = ExtResource("34_ccysa")
+centered = false
+
+[node name="ResponseLabel" type="Label" parent="Response"]
+offset_right = 528.0
+offset_bottom = 68.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 autowrap_mode = 2
 
 [node name="GameOverPanel" type="Panel" parent="."]
-visible = false
 offset_left = 369.0
 offset_top = 71.0
 offset_right = 969.0
@@ -353,7 +372,7 @@ offset_left = 161.0
 offset_top = 30.0
 offset_right = 423.0
 offset_bottom = 97.0
-text = "Game Over"
+text = "He CHEATED!"
 label_settings = SubResource("LabelSettings_lgtil")
 
 [node name="Button" type="Button" parent="GameOverPanel"]

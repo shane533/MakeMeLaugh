@@ -16,8 +16,8 @@ const LABEL_FLY_DURATION: float = 0.5
 
 const LEFT_POS:Vector2 = Vector2(300,500)
 const RIGHT_POS:Vector2 = Vector2(900, 500)
-const INSULT_POS:Vector2 = Vector2(400, 150)
-const RESPONSE_POS:Vector2 = Vector2(450, 200)
+const INSULT_POS:Vector2 = Vector2(350, 150)
+const RESPONSE_POS:Vector2 = Vector2(450, 250)
 
 @export var insults_don: Array[Insult] 
 @export var insults_joe_2020: Array[Insult]
@@ -26,8 +26,10 @@ const RESPONSE_POS:Vector2 = Vector2(450, 200)
 @export var responses_don: Array[Response]
 @export var default_responses_don: Array[Response]
 @export var default_responses_joe: Array[Response]
-@export var insult_label: Label
-@export var response_label: Label
+@export var insult_panel: Node
+@export var insult_label_: Label
+@export var response_panel: Node
+@export var response_label_: Label
 @export var player_hp: HPBar
 @export var enemy_hp: HPBar
 #@export var is_zh: bool = true
@@ -79,8 +81,8 @@ func update_hp_labels():
 
 
 func hide_labels():
-	insult_label.visible = false
-	response_label.visible = false
+	insult_panel.visible = false
+	response_panel.visible = false
 	
 func idle_characters():
 	$PlayerSprite2D.play("idle")
@@ -148,8 +150,8 @@ func enemy_insulting() -> GameState:
 	$EnemySprite2D.play("talk")
 	$PlayerSprite2D.play("idle")
 	var tween = create_tween()
-	tween.tween_property(insult_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
-	tween.parallel().tween_property(insult_label, "position", INSULT_POS, LABEL_FLY_DURATION)
+	tween.tween_property(insult_panel, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
+	tween.parallel().tween_property(insult_panel, "position", INSULT_POS, LABEL_FLY_DURATION)
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_insulting)
@@ -161,8 +163,8 @@ func player_insulting() -> GameState:
 	$PlayerSprite2D.play("talk")
 	$EnemySprite2D.play("idle")
 	var tween = create_tween()
-	tween.tween_property(insult_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
-	tween.parallel().tween_property(insult_label, "position", INSULT_POS, LABEL_FLY_DURATION)
+	tween.tween_property(insult_panel, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
+	tween.parallel().tween_property(insult_panel, "position", INSULT_POS, LABEL_FLY_DURATION)
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(2)
 	tween.tween_callback(finish_insulting)
@@ -179,8 +181,8 @@ func enemy_responsing() -> GameState:
 	$EnemySprite2D.play("talk")
 	$PlayerSprite2D.play("idle")
 	var tween = create_tween()
-	tween.tween_property(response_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
-	tween.parallel().tween_property(response_label, "position", RESPONSE_POS, LABEL_FLY_DURATION)
+	tween.tween_property(response_panel, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
+	tween.parallel().tween_property(response_panel, "position", RESPONSE_POS, LABEL_FLY_DURATION)
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
@@ -192,8 +194,8 @@ func player_responsing() -> GameState:
 	$PlayerSprite2D.play("talk")
 	$EnemySprite2D.play("idle")
 	var tween = create_tween()
-	tween.tween_property(response_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
-	tween.parallel().tween_property(response_label, "position", RESPONSE_POS, LABEL_FLY_DURATION)
+	tween.tween_property(response_panel, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
+	tween.parallel().tween_property(response_panel, "position", RESPONSE_POS, LABEL_FLY_DURATION)
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
@@ -209,17 +211,17 @@ func finish_responsing():
 	next_state()
 
 func init_insult_label(ins: Insult, from_left: bool):
-	insult_label.visible = true
-	insult_label.text = get_insult_content(ins)
-	insult_label.position = LEFT_POS if from_left else RIGHT_POS
-	insult_label.scale = Vector2(0.2, 0.2)
+	insult_panel.visible = true
+	insult_label_.text = get_insult_content(ins)
+	insult_panel.position = LEFT_POS if from_left else RIGHT_POS
+	insult_panel.scale = Vector2(0.2, 0.2)
 	add_dialog(from_left, get_insult_content(ins))
 	
 func init_response_label(res: Response, from_left: bool):
-	response_label.visible = true
-	response_label.text = get_response_content(res)
-	response_label.position = LEFT_POS if from_left else RIGHT_POS
-	response_label.scale = Vector2(0.2, 0.2)
+	response_panel.visible = true
+	response_label_.text = get_response_content(res)
+	response_panel.position = LEFT_POS if from_left else RIGHT_POS
+	response_panel.scale = Vector2(0.2, 0.2)
 	add_dialog(from_left, get_response_content(res))
 
 func next_state():
@@ -271,11 +273,16 @@ func game_over() -> GameState:
 	sprite2.play("use")
 	final_audience_cheer(not is_player_die)
 	hide_labels()
+	show_game_over_panel()
+	
+	return GameState.GameOver
+
+func show_game_over_panel():
 	$GameOverPanel.self_modulate.a = 0.01
 	$GameOverPanel.visible = true
+	$GameOverPanel/Button.text = "NOOOOO!!!!"
 	var tween = create_tween()
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
-	return GameState.GameOver
 
 func is_response_win() -> bool:
 	return _selecting_insult._responses.has(_selecting_response._id)
@@ -402,7 +409,11 @@ func debug(str: String):
 
 
 func _on_button_pressed():
-	game_start(randi()%2==0)
+	if _is_2020:
+		#TODO
+		print("GO TO 2024")
+	else:
+		game_start(randi()%2==0)
 	pass # Replace with function body.
 	
 func init_audiences():

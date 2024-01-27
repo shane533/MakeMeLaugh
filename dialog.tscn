@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn2f7n06t3pgk"]
+[gd_scene load_steps=7 format=3 uid="uid://bn2f7n06t3pgk"]
 
 [ext_resource type="Texture2D" uid="uid://dy7gb2mx6i3m8" path="res://UI/trump.png" id="1_23xeu"]
 [ext_resource type="Script" path="res://dialog.gd" id="1_ve2gj"]
 [ext_resource type="Texture2D" uid="uid://bjcgjn1mbba2n" path="res://UI/bubble.png" id="2_6nhpg"]
 [ext_resource type="Texture2D" uid="uid://cigwos57t3st3" path="res://UI/biden.png" id="2_l5uec"]
+[ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="5_q8pmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmuev"]
+font = ExtResource("5_q8pmy")
 font_color = Color(0.0156863, 0.0196078, 0.0156863, 1)
 
 [node name="Dialog" type="Control" node_paths=PackedStringArray("trump_icon", "biden_icon", "bubble_node", "bubble", "label")]
