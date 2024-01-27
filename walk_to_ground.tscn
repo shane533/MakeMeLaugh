@@ -14,7 +14,3 @@ scale = Vector2(-5, 5)
 [node name="PlayerSprite2D" parent="." instance=ExtResource("2_oykty")]
 position = Vector2(-125, 520)
 scale = Vector2(5, 5)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
