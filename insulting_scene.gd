@@ -18,6 +18,8 @@ const LEFT_POS:Vector2 = Vector2(300,500)
 const RIGHT_POS:Vector2 = Vector2(900, 500)
 const INSULT_POS:Vector2 = Vector2(350, 150)
 const RESPONSE_POS:Vector2 = Vector2(450, 250)
+const START_FALL_POS:Vector2 = Vector2(640, -40)
+const END_FALL_POS:Vector2 = Vector2(640, 300)
 
 @export var insults_don: Array[Insult] 
 @export var insults_joe_2020: Array[Insult]
@@ -60,7 +62,22 @@ func game_start(player_go_first:bool):
 	_unused_insults_don = insults_don.duplicate()
 	_unused_insults_joe = insults_joe_2024.duplicate()
 	debug("Game Start")
-	next_state()
+	start_banner_anim()
+	
+	
+func start_banner_anim():
+	var str = ""
+	if _global.is_ZH:
+		str = "总统垃圾话辩论%d" % (2020 if _global.is_2020 else 2024)
+	else:
+		str = "INSULTING Presidential Debate %d" % (2020 if _global.is_2020 else 2024)
+	$StartBanner/Label.text = str
+	$StartBanner.position = START_FALL_POS 
+	var tween = create_tween()
+	tween.tween_property($StartBanner, "position", END_FALL_POS, 1).set_trans(Tween.TRANS_SPRING)
+	tween.tween_interval(1)
+	tween.tween_property($StartBanner, "modulate:a", 0, 1).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(next_state)
 	
 func hide_game_over_panel():
 	$GameOverPanel.visible = false
@@ -175,7 +192,7 @@ func player_insulting() -> GameState:
 	
 func enemy_responsing() -> GameState:
 	#if enemy must won
-	if _global.is_2020 or randi()%2==0:
+	if _global.is_2020 or randi()%3==0:
 		var res_id = _selecting_insult._responses[0]
 		_selecting_response = get_response_by_id(res_id)
 	else:
@@ -287,18 +304,18 @@ func show_game_over_panel(is_player_die: bool):
 		$GameOverPanel/Cheated.visible = true
 		$GameOverPanel/Maga.visible = false
 		$GameOverPanel/Label.text = "He CHEATED!" if not _global.is_ZH else "他作弊了！"
-		$GameOverPanel/Button.text = "NOOOOO!!!!" if not _global.is_ZH else "不！！！"
+		$GameOverPanel/TextureButton/Label.text = "NOOOOO!!!!" if not _global.is_ZH else "不！！！"
 	else:
 		if is_player_die:
 			$GameOverPanel/Cheated.visible = true
 			$GameOverPanel/Maga.visible = false
 			$GameOverPanel/Label.text = "He CHEATED!" if not _global.is_ZH else "他作弊了！"
-			$GameOverPanel/Button.text = "AGAIN!" if not _global.is_ZH else "再来！"
+			$GameOverPanel/TextureButton/Label.text = "AGAIN!" if not _global.is_ZH else "再来！"
 		else:
 			$GameOverPanel/Cheated.visible = false
 			$GameOverPanel/Maga.visible = true
 			$GameOverPanel/Label.text = "I am the \nPRESIDENT!!!" if not _global.is_ZH else "我才是总统！！！"
-			$GameOverPanel/Button.text = "MAGA!"
+			$GameOverPanel/TextureButton/Label.text = "MAGA!"
 	var tween = create_tween()
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
 
@@ -315,12 +332,16 @@ func settle_damage(is_player_insult: bool) -> GameState:
 	
 func character_hurt(is_player:bool):
 	var sprite:AnimatedSprite2D = $PlayerSprite2D if is_player else $EnemySprite2D
+	var playerhurt:Array = [$SFX/China1SFX, $SFX/China2SFX, $SFX/China3SFX]
+	var enemyhurt:Array = [$SFX/EHH1SFX, $SFX/EHH2SFX, $SFX/EHH3SFX]
 	if is_player:
 		_player_hp -= 1
 		_enemy_hp += 1
+		playerhurt.pick_random().play()
 	else:
 		_enemy_hp -= 1
 		_player_hp += 1
+		enemyhurt.pick_random().play()
 	update_hp_labels()
 	sprite.play("hurt")
 	var tween = create_tween()

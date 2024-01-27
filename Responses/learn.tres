@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://cs2f12sdjl46w"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_6pxk7"]
+
+[resource]
+script = ExtResource("1_6pxk7")
+_id = 210
+_contentEN = "Yes, there are. You just never learned them."
+_contentZH = "当然有，只是以你的智商听不懂"

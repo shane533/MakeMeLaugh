@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://b301qyf2qnhr5"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_exlrl"]
+
+[resource]
+script = ExtResource("1_exlrl")
+_id = 211
+_contentEN = "You should build your own jail"
+_contentZH = "你该去建自己的监狱"

@@ -10,7 +10,7 @@ func _ready():
 	elif Global.is_2020 and !Global.is_ZH:
 		label.text = Global.story_1_EN
 	elif !Global.is_2020 and Global.is_ZH:
-		label.text = Global.story_2_ZN
+		label.text = Global.story_2_ZH
 	elif !Global.is_2020 and !Global.is_ZH:
 		label.text = Global.story_2_EN
 		

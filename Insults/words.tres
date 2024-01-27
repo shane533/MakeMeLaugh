@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://kxcxdw8f3b8b"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_n7q21"]
+
+[resource]
+script = ExtResource("1_n7q21")
+_id = 110
+_contentEN = "There are no words for how disgusting you are."
+_contentZH = "我无法用言语形容你有多恶心"
+_responses = Array[int]([210])

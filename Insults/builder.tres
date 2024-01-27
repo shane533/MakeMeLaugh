@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://1posbp5jgary"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_n80t7"]
+
+[resource]
+script = ExtResource("1_n80t7")
+_id = 111
+_contentEN = "I am the BEST builder!"
+_contentZH = "我是世界上最好的建筑师"
+_responses = Array[int]([211])
