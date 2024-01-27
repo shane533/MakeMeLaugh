@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var typing = $typing
 var path = "res://insulting_scene.tscn"
 
 func _ready():
@@ -7,6 +8,7 @@ func _ready():
 	var i = 0
 	$Label.show()
 	while i <= label_num:
+		typing.play()
 		$Label.visible_characters = i
 		i += 1
 		var time1 = get_tree().create_timer(0.2)

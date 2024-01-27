@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://1i6ewd6tc6bs"]
+[gd_scene load_steps=47 format=3 uid="uid://c8jqjyqs7b5rj"]
 
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="1_2qr2d"]
 [ext_resource type="Texture2D" uid="uid://b8f44x486a3k3" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_1.png" id="2_n83n8"]
@@ -37,14 +37,14 @@
 [ext_resource type="Texture2D" uid="uid://vdbj4gmifbyd" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_10.png" id="35_0nfno"]
 [ext_resource type="Texture2D" uid="uid://bktq1aeb7xdd8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_11.png" id="36_1164q"]
 [ext_resource type="Texture2D" uid="uid://b6j87c3wmifb8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_12.png" id="37_0nrtd"]
-[ext_resource type="Texture2D" uid="uid://b3qfa11qv5ry6" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_0.png" id="38_5stss"]
-[ext_resource type="Texture2D" uid="uid://g0giw3k6swjx" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_1.png" id="39_v6q0r"]
-[ext_resource type="Texture2D" uid="uid://76qg7ou3dpvm" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_2.png" id="40_oqjxh"]
-[ext_resource type="Texture2D" uid="uid://8tnapk4f0swp" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_3.png" id="41_plnte"]
-[ext_resource type="Texture2D" uid="uid://cp3uplskg54ms" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_4.png" id="42_r46tg"]
-[ext_resource type="Texture2D" uid="uid://wf2m3ubguw5i" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_5.png" id="43_w84ux"]
-[ext_resource type="Texture2D" uid="uid://bc2hd0jws7vd0" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_6.png" id="44_a8scc"]
-[ext_resource type="Texture2D" uid="uid://d0bkdj4bwogt1" path="res://Chars/Male/Character 2/Clothes 1/Character2M_1_walk_7.png" id="45_l7wfw"]
+[ext_resource type="Texture2D" uid="uid://coyl1bchot20k" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_0.png" id="38_we6fd"]
+[ext_resource type="Texture2D" uid="uid://bbyb3rxj4i7ig" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_1.png" id="39_kdtbt"]
+[ext_resource type="Texture2D" uid="uid://d8thenwl06hy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_2.png" id="40_08s1m"]
+[ext_resource type="Texture2D" uid="uid://cjpwhrbkuw8v" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_3.png" id="41_mov46"]
+[ext_resource type="Texture2D" uid="uid://bdoxji2uo6cif" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_4.png" id="42_bkb2r"]
+[ext_resource type="Texture2D" uid="uid://cuxxgffmgmmc0" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_5.png" id="43_gn6ur"]
+[ext_resource type="Texture2D" uid="uid://5w8q51ag7s1f" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_6.png" id="44_cafxa"]
+[ext_resource type="Texture2D" uid="uid://bidyhjdf11hiv" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_walk_7.png" id="45_i56cl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npjga"]
 animations = [{
@@ -186,28 +186,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("38_5stss")
+"texture": ExtResource("38_we6fd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_v6q0r")
+"texture": ExtResource("39_kdtbt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_oqjxh")
+"texture": ExtResource("40_08s1m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_plnte")
+"texture": ExtResource("41_mov46")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_r46tg")
+"texture": ExtResource("42_bkb2r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_w84ux")
+"texture": ExtResource("43_gn6ur")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_a8scc")
+"texture": ExtResource("44_cafxa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_l7wfw")
+"texture": ExtResource("45_i56cl")
 }],
 "loop": true,
 "name": &"walk",
@@ -218,5 +218,5 @@ animations = [{
 position = Vector2(220, 391)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"die"
+animation = &"walk"
 autoplay = "idle"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://clq3umec5nkdf"]
+[gd_scene load_steps=6 format=3 uid="uid://dthh41tmdwmgj"]
 
 [ext_resource type="Script" path="res://start_scene.gd" id="1_ukghc"]
 [ext_resource type="Texture2D" uid="uid://dmj18rdqxg8nq" path="res://PNG/menu.png" id="2_v6svy"]
@@ -74,6 +74,7 @@ text = "这是一个游戏"
 
 [node name="click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_b6nm7")
+volume_db = 24.0
 
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
