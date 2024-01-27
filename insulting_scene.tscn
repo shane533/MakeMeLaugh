@@ -318,9 +318,9 @@ offset_bottom = 406.0
 text = "怎么，你想借一条用吗？"
 
 [node name="OptionContainer" type="VBoxContainer" parent="."]
-offset_left = 450.0
+offset_left = 480.0
 offset_top = 453.0
-offset_right = 650.0
+offset_right = 680.0
 offset_bottom = 493.0
 
 [node name="ProgressBar" type="ProgressBar" parent="OptionContainer"]
