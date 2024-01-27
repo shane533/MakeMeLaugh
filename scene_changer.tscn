@@ -1,27 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs2y7wkaef6tw"]
+[gd_scene load_steps=2 format=3 uid="uid://bs2y7wkaef6tw"]
 
 [ext_resource type="Script" path="res://scene_changer.gd" id="1_ol6mh"]
-[ext_resource type="VideoStream" path="res://video.ogv" id="2_tl7nu"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ol6mh")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-visible = false
-offset_right = 1280.0
-offset_bottom = 720.0
-stream = ExtResource("2_tl7nu")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../Node2D")
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = 7.0
-offset_top = 44.0
-offset_right = 252.0
-offset_bottom = 67.0
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 text = "在4202年的某天，川川来到了这里"
-
-[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

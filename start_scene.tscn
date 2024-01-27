@@ -1,29 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://dthh41tmdwmgj"]
+[gd_scene load_steps=3 format=3 uid="uid://dthh41tmdwmgj"]
 
 [ext_resource type="Script" path="res://start_scene.gd" id="1_ukghc"]
+[ext_resource type="Texture2D" uid="uid://dmj18rdqxg8nq" path="res://PNG/menu.png" id="2_v6svy"]
 
 [node name="StartScene" type="Node2D"]
 script = ExtResource("1_ukghc")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_v6svy")
+
 [node name="start_button" type="Button" parent="."]
-offset_left = 900.0
-offset_top = 200.0
-offset_right = 1050.0
-offset_bottom = 250.0
+offset_left = 1050.0
+offset_top = 400.0
+offset_right = 1200.0
+offset_bottom = 450.0
 text = "开始"
 
 [node name="exit_button" type="Button" parent="."]
-offset_left = 900.0
-offset_top = 300.0
-offset_right = 1050.0
-offset_bottom = 350.0
+offset_left = 1050.0
+offset_top = 500.0
+offset_right = 1200.0
+offset_bottom = 550.0
 text = "退出"
 
 [node name="title" type="Label" parent="."]
-offset_left = 900.0
-offset_top = 100.0
-offset_right = 1050.0
-offset_bottom = 150.0
+offset_left = 500.0
+offset_top = 300.0
+offset_right = 650.0
+offset_bottom = 350.0
 text = "这是一个游戏"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
