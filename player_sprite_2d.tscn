@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c8jqjyqs7b5rj"]
+[gd_scene load_steps=53 format=3 uid="uid://c8jqjyqs7b5rj"]
 
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="1_2qr2d"]
 [ext_resource type="Texture2D" uid="uid://b8f44x486a3k3" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_1.png" id="2_n83n8"]
@@ -18,10 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://k42tps527rgq" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_6.png" id="16_pxyga"]
 [ext_resource type="Texture2D" uid="uid://coq2qvgl4e0ou" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_7.png" id="17_puw3s"]
 [ext_resource type="Texture2D" uid="uid://slacwo7m1p1p" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_0.png" id="18_10tp0"]
+[ext_resource type="Texture2D" uid="uid://ddiutu0r28hlo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_0.png" id="18_re5x5"]
 [ext_resource type="Texture2D" uid="uid://71ae62r21okf" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_1.png" id="19_cassr"]
+[ext_resource type="Texture2D" uid="uid://dhj8vw4nbq81f" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_1.png" id="19_yd3gk"]
+[ext_resource type="Texture2D" uid="uid://biqwd3kdh1r3d" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_2.png" id="20_bn0ie"]
 [ext_resource type="Texture2D" uid="uid://bbjgsq71xx50u" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_2.png" id="20_clbyw"]
 [ext_resource type="Texture2D" uid="uid://l1cippac0sfg" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_3.png" id="21_5iewe"]
+[ext_resource type="Texture2D" uid="uid://fglr4p7x7im4" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_3.png" id="21_leoot"]
 [ext_resource type="Texture2D" uid="uid://ceo3tinvnopqc" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_4.png" id="22_dhlya"]
+[ext_resource type="Texture2D" uid="uid://bh86jvet3ele8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_4.png" id="22_e2ksh"]
+[ext_resource type="Texture2D" uid="uid://cw82mi3tbkopo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_punch_5.png" id="23_mn2ir"]
 [ext_resource type="Texture2D" uid="uid://df3mqoryfbctu" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_5.png" id="23_n2el7"]
 [ext_resource type="Texture2D" uid="uid://jgr7hwlnokmo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_6.png" id="24_ue57k"]
 [ext_resource type="Texture2D" uid="uid://dqry4utv13ggo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_00.png" id="25_tinjw"]
@@ -112,6 +118,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_re5x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yd3gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bn0ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_leoot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_e2ksh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mn2ir")
+}],
+"loop": true,
+"name": &"punch",
 "speed": 5.0
 }, {
 "frames": [{
@@ -218,5 +247,5 @@ animations = [{
 position = Vector2(220, 391)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"idle"
+animation = &"use"
 autoplay = "idle"
