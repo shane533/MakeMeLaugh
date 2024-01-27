@@ -133,7 +133,9 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jkab6"]
+font = ExtResource("41_dvdmw")
 font_size = 36
+outline_size = 2
 
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_panel", "insult_label_", "response_panel", "response_label_", "player_hp", "enemy_hp")]
 script = ExtResource("1_58qa0")
@@ -427,6 +429,7 @@ offset_right = 399.0
 offset_bottom = 302.0
 text = "HE CHEATED!"
 label_settings = SubResource("LabelSettings_lgtil")
+horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="GameOverPanel"]
 layout_mode = 0
@@ -509,5 +512,6 @@ offset_bottom = 25.0
 text = "INSULTING residential Debate 2020"
 label_settings = SubResource("LabelSettings_jkab6")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="GameOverPanel/TextureButton" to="." method="_on_button_pressed"]
