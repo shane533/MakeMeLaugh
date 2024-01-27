@@ -7,7 +7,8 @@ var _hp: int
 
 func init():
 	_name = "TestCharacter"
-	_hp = 3
+	_hp = 6
+	print("TETSTTTT")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
