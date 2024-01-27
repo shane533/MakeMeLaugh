@@ -142,7 +142,9 @@ font_size = 36
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label")]
 script = ExtResource("1_58qa0")
 insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
+insults_joe = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
 responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
+responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
 insult_label = NodePath("InsultLabel")
 response_label = NodePath("ResponseLabel")
 
@@ -229,3 +231,4 @@ offset_right = 976.0
 offset_bottom = 274.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
+autowrap_mode = 2
