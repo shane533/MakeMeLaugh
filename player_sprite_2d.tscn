@@ -1,0 +1,185 @@
+[gd_scene load_steps=39 format=3 uid="uid://1i6ewd6tc6bs"]
+
+[ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="1_2qr2d"]
+[ext_resource type="Texture2D" uid="uid://b8f44x486a3k3" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_1.png" id="2_n83n8"]
+[ext_resource type="Texture2D" uid="uid://c2pg8b51muso" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_2.png" id="3_q8t4m"]
+[ext_resource type="Texture2D" uid="uid://dqkm5h67ug7if" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_3.png" id="4_fiw0i"]
+[ext_resource type="Texture2D" uid="uid://cqcs1hy8t84hb" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_4.png" id="5_q1ewe"]
+[ext_resource type="Texture2D" uid="uid://dxamt7ocearki" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_5.png" id="6_8p4mm"]
+[ext_resource type="Texture2D" uid="uid://bnp2igtbbij5s" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_6.png" id="7_wu58n"]
+[ext_resource type="Texture2D" uid="uid://der52arcktkib" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_0.png" id="8_nm2fj"]
+[ext_resource type="Texture2D" uid="uid://bfs8ekxkj6uiy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_1.png" id="9_krsn4"]
+[ext_resource type="Texture2D" uid="uid://cfj5jh4dqrkbj" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_0.png" id="10_bhjvh"]
+[ext_resource type="Texture2D" uid="uid://dsbhcav28vj41" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_1.png" id="11_3m8uo"]
+[ext_resource type="Texture2D" uid="uid://c3dpvpm42kd27" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_2.png" id="12_1le87"]
+[ext_resource type="Texture2D" uid="uid://jnfa766txho0" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_3.png" id="13_wsrxj"]
+[ext_resource type="Texture2D" uid="uid://b2470jmqmv5g8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_4.png" id="14_hkg13"]
+[ext_resource type="Texture2D" uid="uid://bjpigaeyi6l1x" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_5.png" id="15_vm3s6"]
+[ext_resource type="Texture2D" uid="uid://k42tps527rgq" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_6.png" id="16_pxyga"]
+[ext_resource type="Texture2D" uid="uid://coq2qvgl4e0ou" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_7.png" id="17_puw3s"]
+[ext_resource type="Texture2D" uid="uid://slacwo7m1p1p" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_0.png" id="18_10tp0"]
+[ext_resource type="Texture2D" uid="uid://71ae62r21okf" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_1.png" id="19_cassr"]
+[ext_resource type="Texture2D" uid="uid://bbjgsq71xx50u" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_2.png" id="20_clbyw"]
+[ext_resource type="Texture2D" uid="uid://l1cippac0sfg" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_3.png" id="21_5iewe"]
+[ext_resource type="Texture2D" uid="uid://ceo3tinvnopqc" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_4.png" id="22_dhlya"]
+[ext_resource type="Texture2D" uid="uid://df3mqoryfbctu" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_5.png" id="23_n2el7"]
+[ext_resource type="Texture2D" uid="uid://jgr7hwlnokmo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_6.png" id="24_ue57k"]
+[ext_resource type="Texture2D" uid="uid://dqry4utv13ggo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_00.png" id="25_tinjw"]
+[ext_resource type="Texture2D" uid="uid://bb3bsrnhlpvkw" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_01.png" id="26_ewd1n"]
+[ext_resource type="Texture2D" uid="uid://dio18qcjbk5gn" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_02.png" id="27_fd6u7"]
+[ext_resource type="Texture2D" uid="uid://clbsflnbtu75g" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_03.png" id="28_a0wxj"]
+[ext_resource type="Texture2D" uid="uid://cuthaijctqmly" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_04.png" id="29_003ww"]
+[ext_resource type="Texture2D" uid="uid://c7j8dg6i0egjr" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_05.png" id="30_2124g"]
+[ext_resource type="Texture2D" uid="uid://cao6teo013nu6" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_06.png" id="31_b8fao"]
+[ext_resource type="Texture2D" uid="uid://bod08b6qweovd" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_07.png" id="32_bng3i"]
+[ext_resource type="Texture2D" uid="uid://cs56j2qsna0lr" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_08.png" id="33_tvi26"]
+[ext_resource type="Texture2D" uid="uid://cubndbwdobh33" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_09.png" id="34_1s563"]
+[ext_resource type="Texture2D" uid="uid://vdbj4gmifbyd" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_10.png" id="35_0nfno"]
+[ext_resource type="Texture2D" uid="uid://bktq1aeb7xdd8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_11.png" id="36_1164q"]
+[ext_resource type="Texture2D" uid="uid://b6j87c3wmifb8" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_use_12.png" id="37_0nrtd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_npjga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2qr2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n83n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q8t4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fiw0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q1ewe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8p4mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wu58n")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nm2fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_krsn4")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bhjvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3m8uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1le87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wsrxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hkg13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vm3s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pxyga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_puw3s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_10tp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cassr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_clbyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5iewe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dhlya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n2el7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ue57k")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_tinjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ewd1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fd6u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_a0wxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_003ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2124g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_b8fao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bng3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_tvi26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1s563")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0nfno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1164q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0nrtd")
+}],
+"loop": true,
+"name": &"use",
+"speed": 5.0
+}]
+
+[node name="PlayerSprite2D" type="AnimatedSprite2D"]
+position = Vector2(220, 391)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_npjga")
+animation = &"talk"
+autoplay = "idle"
