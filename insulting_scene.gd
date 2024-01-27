@@ -98,6 +98,7 @@ func wait_for_player_insult() -> GameState:
 	hide_labels()
 	idle_characters()
 	if len(_unused_insults_don) < 3:
+		print("NOT ENOUGH INSULTS")
 		_unused_insults_don = insults_don.duplicate()
 	_unused_insults_don.shuffle()
 	clear_options()
@@ -143,6 +144,8 @@ func enemy_insulting() -> GameState:
 		_selecting_insult = insults_joe_2020.pick_random()
 		insults_joe_2020.erase(_selecting_insult)
 	else:
+		if len(_unused_insults_joe) == 0:
+			_unused_insults_joe = insults_joe_2024.duplicate()
 		_unused_insults_joe.shuffle()
 		_selecting_insult = _unused_insults_joe.pop_front()
 	init_insult_label(_selecting_insult, false)
@@ -281,14 +284,20 @@ func show_game_over_panel(is_player_die: bool):
 	$GameOverPanel.self_modulate.a = 0.01
 	$GameOverPanel.visible = true
 	if _global.is_2020:
-		$GameOverPanel/Label.text = "He CHEATED!"
-		$GameOverPanel/Button.text = "NOOOOO!!!!"
+		$GameOverPanel/Cheated.visible = true
+		$GameOverPanel/Maga.visible = false
+		$GameOverPanel/Label.text = "He CHEATED!" if not _global.is_ZH else "他作弊了！"
+		$GameOverPanel/Button.text = "NOOOOO!!!!" if not _global.is_ZH else "不！！！"
 	else:
 		if is_player_die:
-			$GameOverPanel/Label.text = "He CHEATED!"
-			$GameOverPanel/Button.text = "AGAIN!"
+			$GameOverPanel/Cheated.visible = true
+			$GameOverPanel/Maga.visible = false
+			$GameOverPanel/Label.text = "He CHEATED!" if not _global.is_ZH else "他作弊了！"
+			$GameOverPanel/Button.text = "AGAIN!" if not _global.is_ZH else "再来！"
 		else:
-			$GameOverPanel/Label.text = "I am the PRESIDENT!!!"
+			$GameOverPanel/Cheated.visible = false
+			$GameOverPanel/Maga.visible = true
+			$GameOverPanel/Label.text = "I am the \nPRESIDENT!!!" if not _global.is_ZH else "我才是总统！！！"
 			$GameOverPanel/Button.text = "MAGA!"
 	var tween = create_tween()
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)

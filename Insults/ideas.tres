@@ -7,4 +7,4 @@ script = ExtResource("1_epy4p")
 _id = 305
 _contentEN = "Don't you have any better ideas?"
 _contentZH = "你没有更好的想法了吗？"
-_responses = Array[int]([202])
+_responses = Array[int]([215])

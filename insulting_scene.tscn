@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=61 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -44,7 +44,11 @@
 [ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="41_dvdmw"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
 [ext_resource type="AudioStream" uid="uid://csi2ktjfv337k" path="res://SFX/crowd_shocked.wav" id="42_sgxbe"]
+[ext_resource type="Texture2D" uid="uid://bxcotjfob0flo" path="res://UI/CHEATED_frame.png" id="42_wndyk"]
 [ext_resource type="AudioStream" uid="uid://27b84qpvcen5" path="res://SFX/laughandcheers.wav" id="43_eq60d"]
+[ext_resource type="Texture2D" uid="uid://dc5yxxs5ybb3y" path="res://UI/trump_thumb.png" id="43_w5g85"]
+[ext_resource type="Texture2D" uid="uid://cp5a48borb3yt" path="res://UI/MAGA_frame.png" id="44_i30td"]
+[ext_resource type="Texture2D" uid="uid://cdvgpt4tcv78c" path="res://UI/US.png" id="45_orpng"]
 [ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="46_uv2sf"]
 [ext_resource type="Texture2D" uid="uid://bfdt6khcki2a0" path="res://Freebie Pixel Emojis.png" id="73_x8cj3"]
 
@@ -55,7 +59,9 @@ font_size = 20
 font_color = Color(0.0196078, 0.0196078, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lgtil"]
+font = ExtResource("41_dvdmw")
 font_size = 48
+outline_size = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwvg3"]
 atlas = ExtResource("73_x8cj3")
@@ -364,24 +370,43 @@ autowrap_mode = 2
 [node name="GameOverPanel" type="Panel" parent="."]
 offset_left = 369.0
 offset_top = 71.0
-offset_right = 969.0
-offset_bottom = 271.0
+offset_right = 369.0
+offset_bottom = 71.0
+
+[node name="Cheated" type="Sprite2D" parent="GameOverPanel"]
+position = Vector2(2, -52)
+texture = ExtResource("42_wndyk")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="GameOverPanel/Cheated"]
+position = Vector2(257, 183)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("43_w5g85")
+
+[node name="Maga" type="Sprite2D" parent="GameOverPanel"]
+position = Vector2(2, -52)
+texture = ExtResource("44_i30td")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="GameOverPanel/Maga"]
+position = Vector2(230, 188)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("45_orpng")
 
 [node name="Label" type="Label" parent="GameOverPanel"]
-layout_mode = 0
-offset_left = 161.0
-offset_top = 30.0
-offset_right = 423.0
-offset_bottom = 97.0
-text = "He CHEATED!"
+offset_left = 96.0
+offset_top = 235.0
+offset_right = 399.0
+offset_bottom = 302.0
+text = "HE CHEATED!"
 label_settings = SubResource("LabelSettings_lgtil")
 
 [node name="Button" type="Button" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 127.0
-offset_right = 338.0
-offset_bottom = 177.0
+offset_left = 174.0
+offset_top = 382.0
+offset_right = 274.0
+offset_bottom = 432.0
 text = "Retry"
 
 [node name="SFX" type="Node" parent="."]
