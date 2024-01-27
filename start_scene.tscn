@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clq3umec5nkdf"]
+[gd_scene load_steps=6 format=3 uid="uid://dthh41tmdwmgj"]
 
 [ext_resource type="Script" path="res://start_scene.gd" id="1_ukghc"]
 [ext_resource type="Texture2D" uid="uid://dmj18rdqxg8nq" path="res://PNG/menu.png" id="2_v6svy"]
 [ext_resource type="Texture2D" uid="uid://2peof5twwbau" path="res://PNG/grey_button14.png" id="3_l076i"]
 [ext_resource type="Texture2D" uid="uid://b1ab7l1clogrx" path="res://PNG/grey_button15.png" id="4_sye6j"]
+[ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="5_b6nm7"]
 
 [node name="StartScene" type="Node2D"]
 script = ExtResource("1_ukghc")
@@ -15,9 +16,9 @@ texture = ExtResource("2_v6svy")
 
 [node name="exit_button" type="TextureButton" parent="."]
 offset_left = 1046.0
-offset_top = 599.0
+offset_top = 460.0
 offset_right = 1236.0
-offset_bottom = 648.0
+offset_bottom = 509.0
 texture_normal = ExtResource("3_l076i")
 
 [node name="Label" type="Label" parent="exit_button"]
@@ -32,9 +33,9 @@ vertical_alignment = 1
 
 [node name="start_button" type="TextureButton" parent="."]
 offset_left = 1050.0
-offset_top = 400.0
+offset_top = 260.0
 offset_right = 1240.0
-offset_bottom = 449.0
+offset_bottom = 309.0
 texture_normal = ExtResource("4_sye6j")
 
 [node name="Label" type="Label" parent="start_button"]
@@ -48,16 +49,18 @@ vertical_alignment = 1
 
 [node name="language_button" type="TextureButton" parent="."]
 offset_left = 1051.0
-offset_top = 502.0
+offset_top = 360.0
 offset_right = 1241.0
-offset_bottom = 551.0
+offset_bottom = 409.0
 texture_normal = ExtResource("4_sye6j")
 
 [node name="Label" type="Label" parent="language_button"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_right = 190.0
-offset_bottom = 49.0
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 187.0
+offset_bottom = 48.0
 text = "中文"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -69,5 +72,9 @@ offset_right = 650.0
 offset_bottom = 350.0
 text = "这是一个游戏"
 
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_b6nm7")
+
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="language_button" to="." method="_on_language_button_pressed"]
