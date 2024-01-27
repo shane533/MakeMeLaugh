@@ -28,7 +28,7 @@ const RESPONSE_POS:Vector2 = Vector2(450, 200)
 @export var default_responses_joe: Array[Response]
 @export var insult_label: Label
 @export var response_label: Label
-@export var is_zh: bool = true
+#@export var is_zh: bool = true
 # 
 var _player_hp: int
 var _enemy_hp: int
@@ -43,6 +43,7 @@ var _is_ticking: bool
 var _left_audiences:Array[AnimatedSprite2D]
 var _right_audiences:Array[AnimatedSprite2D]
 var _is_2020: bool = true# 2020 is a war meant to lose
+var _global: Node
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -356,19 +357,21 @@ func get_response_by_id(id) -> Response:
 	return null	
 	
 func get_insult_content(ins:Insult) -> String:
-	if is_zh:
+	if _global.is_ZH:
 		return ins._contentZH
 	else:
 		return ins._contentEN
 	
 func get_response_content(res:Response) -> String:
-	if is_zh:
+	if _global.is_ZH:
 		return res._contentZH
 	else:
 		return res._contentEN
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#prepare_options()
+	
+	_global = get_node("/root/Global")
 	init_audiences()
 	game_start(true)
 	pass # Replace with function body.
