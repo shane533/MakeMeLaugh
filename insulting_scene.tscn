@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://coq2qvgl4e0ou" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_7.png" id="30_ydq6x"]
 [ext_resource type="Texture2D" uid="uid://slacwo7m1p1p" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_0.png" id="31_bd07k"]
 [ext_resource type="Texture2D" uid="uid://71ae62r21okf" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_1.png" id="32_ck441"]
+[ext_resource type="Texture2D" uid="uid://dni4i7dljbq1l" path="res://UI/webpage.png" id="32_tbux1"]
 [ext_resource type="Texture2D" uid="uid://bbjgsq71xx50u" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_2.png" id="33_545fv"]
 [ext_resource type="Texture2D" uid="uid://l1cippac0sfg" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_3.png" id="34_65mrk"]
 [ext_resource type="Texture2D" uid="uid://ceo3tinvnopqc" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_4.png" id="35_v1naq"]
@@ -110,9 +111,6 @@
 [ext_resource type="Texture2D" uid="uid://cgwppt7muk6ix" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_4.png" id="90_fkuxi"]
 [ext_resource type="Texture2D" uid="uid://drourbtq77ri2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_5.png" id="91_2vleb"]
 [ext_resource type="Texture2D" uid="uid://bq61fkxnfkv6k" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_6.png" id="92_1r66o"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npx5q"]
-load_path = "res://.godot/imported/2.png-b4bb4e73f41b318e86d3ea875a10ea27.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npjga"]
 animations = [{
@@ -469,10 +467,10 @@ centered = false
 
 [node name="Crowd" type="Node" parent="Background"]
 
-[node name="Layer1" type="Sprite2D" parent="Background"]
+[node name="Webpage" type="Sprite2D" parent="Background"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(2.21875, 2.21914)
-texture = SubResource("CompressedTexture2D_npx5q")
+texture = ExtResource("32_tbux1")
 centered = false
 
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="."]
