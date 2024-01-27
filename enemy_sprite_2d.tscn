@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dhwmyag1o4y50"]
+[gd_scene load_steps=47 format=3 uid="uid://bcj6culq70bj1"]
 
 [ext_resource type="Texture2D" uid="uid://hg6hwfuwu51m" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_0.png" id="1_e43sw"]
 [ext_resource type="Texture2D" uid="uid://bl3vasubh5qks" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_death_1.png" id="2_30wnu"]
@@ -18,12 +18,20 @@
 [ext_resource type="Texture2D" uid="uid://bcbyai1i1qv6p" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_6.png" id="16_irjcm"]
 [ext_resource type="Texture2D" uid="uid://dt1w3xdji8ars" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_idle_7.png" id="17_otcli"]
 [ext_resource type="Texture2D" uid="uid://dbv2lpbq0ipoj" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_0.png" id="18_7ebkt"]
+[ext_resource type="Texture2D" uid="uid://cctcppe416pvd" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_0.png" id="18_ox3hh"]
+[ext_resource type="Texture2D" uid="uid://chbqfs7bsuphk" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_1.png" id="19_46x02"]
 [ext_resource type="Texture2D" uid="uid://dbmou6vngqwfx" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_1.png" id="19_ppfba"]
 [ext_resource type="Texture2D" uid="uid://c5cwhu1k8r1f2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_2.png" id="20_0jn00"]
+[ext_resource type="Texture2D" uid="uid://ok3hoc6euusv" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_2.png" id="20_a2mfe"]
 [ext_resource type="Texture2D" uid="uid://bg2g7mcenci1r" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_3.png" id="21_dogso"]
+[ext_resource type="Texture2D" uid="uid://r62sqpmmy7v3" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_3.png" id="21_tnelo"]
 [ext_resource type="Texture2D" uid="uid://cgwppt7muk6ix" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_4.png" id="22_40gtc"]
+[ext_resource type="Texture2D" uid="uid://ueb0w8y4mt6k" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_4.png" id="22_cv4i4"]
 [ext_resource type="Texture2D" uid="uid://drourbtq77ri2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_5.png" id="23_21nk5"]
+[ext_resource type="Texture2D" uid="uid://cyhburec4v6uu" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_5.png" id="23_nlecn"]
+[ext_resource type="Texture2D" uid="uid://dn6c67iv27shf" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_6.png" id="24_o8xjr"]
 [ext_resource type="Texture2D" uid="uid://bq61fkxnfkv6k" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_talk_6.png" id="24_okj4u"]
+[ext_resource type="Texture2D" uid="uid://coii5yb0x5qn3" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_walk_7.png" id="25_6smiu"]
 [ext_resource type="Texture2D" uid="uid://chh1co1slb2ku" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_00.png" id="25_ier3q"]
 [ext_resource type="Texture2D" uid="uid://bdr4gte0qsuno" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_01.png" id="26_027w0"]
 [ext_resource type="Texture2D" uid="uid://dhhagcvy4hsyx" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_02.png" id="27_kwbu3"]
@@ -175,11 +183,40 @@ animations = [{
 "loop": true,
 "name": &"use",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ox3hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_46x02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_a2mfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tnelo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cv4i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nlecn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_o8xjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6smiu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [node name="EnemySprite2D" type="AnimatedSprite2D"]
 position = Vector2(1101, 391)
 scale = Vector2(-7, 7)
 sprite_frames = SubResource("SpriteFrames_5aop4")
-animation = &"use"
+animation = &"walk"
 autoplay = "idle"
