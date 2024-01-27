@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 class_name Option
 
@@ -9,7 +9,7 @@ var _id: int
 
 func init(id: int, text: String):
 	_id = id
-	self.text = text
+	$Label.text = text
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

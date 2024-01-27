@@ -1,10 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq21tysc76mvi"]
+[gd_scene load_steps=6 format=3 uid="uid://dq21tysc76mvi"]
 
+[ext_resource type="Texture2D" uid="uid://b6bb8epjx1if0" path="res://PNG/yellow_button00.png" id="1_kj51q"]
 [ext_resource type="Script" path="res://option.gd" id="1_oqfyx"]
+[ext_resource type="Texture2D" uid="uid://cpukqesbvbl7m" path="res://PNG/yellow_button02.png" id="2_h0xex"]
+[ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="4_57k1v"]
 
-[node name="OptionButton" type="Button"]
-custom_minimum_size = Vector2(200, 40)
-text = "怎么，你想借一条用吗？"
+[sub_resource type="LabelSettings" id="LabelSettings_iu6nd"]
+font = ExtResource("4_57k1v")
+font_size = 24
+font_color = Color(0, 0, 1, 1)
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_oqfyx")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 49.0
+texture_normal = ExtResource("1_kj51q")
+texture_pressed = ExtResource("2_h0xex")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 298.0
+offset_bottom = 42.0
+text = "xxxx"
+label_settings = SubResource("LabelSettings_iu6nd")
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_pressed"]
