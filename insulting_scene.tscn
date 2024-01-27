@@ -1,7 +1,6 @@
-[gd_scene load_steps=48 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=66 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
-[ext_resource type="Texture2D" uid="uid://csc3wouyitg1" path="res://PNG/blue_panel.png" id="2_tq6rj"]
 [ext_resource type="Resource" uid="uid://63757bkhg7mq" path="res://Insults/apes.tres" id="2_ulf60"]
 [ext_resource type="Resource" uid="uid://b6pbahnecymw8" path="res://Insults/diaper.tres" id="3_4hrsk"]
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="4_5csni"]
@@ -22,6 +21,12 @@
 [ext_resource type="Resource" uid="uid://csfv6ei54c0ls" path="res://Responses/fakenews.tres" id="12_ljpic"]
 [ext_resource type="Resource" uid="uid://dtowvoccv0uke" path="res://Responses/ridiculous.tres" id="13_y0or7"]
 [ext_resource type="Resource" uid="uid://du8qa3urmb5u0" path="res://Responses/knowall.tres" id="14_dlp4g"]
+[ext_resource type="Texture2D" uid="uid://c8iefvxr4xp3v" path="res://BattleScene/1.png" id="15_awv0j"]
+[ext_resource type="Texture2D" uid="uid://c2y4llq5oj2f3" path="res://BattleScene/2.png" id="16_avxvd"]
+[ext_resource type="Texture2D" uid="uid://c8e6xaq3cyt4w" path="res://BattleScene/3.png" id="17_4i4dq"]
+[ext_resource type="Texture2D" uid="uid://dgm504brojgfp" path="res://BattleScene/4.png" id="18_q6p8m"]
+[ext_resource type="Texture2D" uid="uid://ce8r0j5cueps3" path="res://BattleScene/5.png" id="19_tbmya"]
+[ext_resource type="Texture2D" uid="uid://csjml5x0fthv7" path="res://BattleScene/webpage.png" id="20_mbyni"]
 [ext_resource type="Texture2D" uid="uid://der52arcktkib" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_0.png" id="21_cugbm"]
 [ext_resource type="Texture2D" uid="uid://bfs8ekxkj6uiy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_1.png" id="22_a4x18"]
 [ext_resource type="Texture2D" uid="uid://cfj5jh4dqrkbj" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_0.png" id="23_f7wfn"]
@@ -39,10 +44,23 @@
 [ext_resource type="Texture2D" uid="uid://ceo3tinvnopqc" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_4.png" id="35_v1naq"]
 [ext_resource type="Texture2D" uid="uid://df3mqoryfbctu" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_5.png" id="36_0xi7l"]
 [ext_resource type="Texture2D" uid="uid://jgr7hwlnokmo" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_talk_6.png" id="37_xjfg1"]
+[ext_resource type="Texture2D" uid="uid://chh1co1slb2ku" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_00.png" id="40_dajp6"]
 [ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="40_tpnsh"]
+[ext_resource type="Texture2D" uid="uid://bdr4gte0qsuno" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_01.png" id="41_04q6t"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
 [ext_resource type="AudioStream" uid="uid://csi2ktjfv337k" path="res://SFX/crowd_shocked.wav" id="42_sgxbe"]
+[ext_resource type="Texture2D" uid="uid://dhhagcvy4hsyx" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_02.png" id="42_xmrqp"]
 [ext_resource type="AudioStream" uid="uid://27b84qpvcen5" path="res://SFX/laughandcheers.wav" id="43_eq60d"]
+[ext_resource type="Texture2D" uid="uid://cfo13iwy3tvoa" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_03.png" id="43_jxh43"]
+[ext_resource type="Texture2D" uid="uid://dhuh48rv06vp0" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_04.png" id="44_jfajw"]
+[ext_resource type="Texture2D" uid="uid://buuuwnvdtg75y" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_05.png" id="45_xdq6j"]
+[ext_resource type="Texture2D" uid="uid://ccrf2aoxkk1p0" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_06.png" id="46_fuw8m"]
+[ext_resource type="Texture2D" uid="uid://dsmneyn2vxke7" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_07.png" id="47_ur334"]
+[ext_resource type="Texture2D" uid="uid://dv2cw6j2rfm0i" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_08.png" id="48_lxptt"]
+[ext_resource type="Texture2D" uid="uid://bidlm2b0rovd2" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_09.png" id="49_s2wa8"]
+[ext_resource type="Texture2D" uid="uid://c25qbcbc483uh" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_10.png" id="50_550c8"]
+[ext_resource type="Texture2D" uid="uid://ntbiqj0vc0gm" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_11.png" id="51_mnfk0"]
+[ext_resource type="Texture2D" uid="uid://bcf26hpbr7kue" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_12.png" id="52_o2fpm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npjga"]
 animations = [{
@@ -137,6 +155,50 @@ animations = [{
 "loop": true,
 "name": &"talk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_dajp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_04q6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_xmrqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jxh43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_jfajw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_xdq6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fuw8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ur334")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_lxptt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_s2wa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_550c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_mnfk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_o2fpm")
+}],
+"loop": true,
+"name": &"use",
+"speed": 5.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kk7xp"]
@@ -159,11 +221,39 @@ insult_label = NodePath("InsultLabel")
 response_label = NodePath("ResponseLabel")
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(12.8, 7.2)
-texture = ExtResource("2_tq6rj")
+texture = ExtResource("15_awv0j")
 centered = false
 
 [node name="Crowd" type="Node" parent="Background"]
+
+[node name="Layer1" type="Sprite2D" parent="Background"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2.21875, 2.21914)
+texture = ExtResource("16_avxvd")
+centered = false
+
+[node name="Layer2" type="Sprite2D" parent="Background"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2.21875, 2.21914)
+texture = ExtResource("17_4i4dq")
+centered = false
+
+[node name="Layer3" type="Sprite2D" parent="Background"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2.21875, 2.21914)
+texture = ExtResource("18_q6p8m")
+centered = false
+
+[node name="Layer4" type="Sprite2D" parent="Background"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2.21875, 2.21914)
+texture = ExtResource("19_tbmya")
+centered = false
+
+[node name="Webpage" type="Sprite2D" parent="Background"]
+visible = false
+texture = ExtResource("20_mbyni")
+centered = false
 
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(220, 391)
@@ -171,6 +261,17 @@ scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
 animation = &"die"
 autoplay = "idle"
+
+[node name="PlayerHPBar" type="ProgressBar" parent="."]
+modulate = Color(1, 0.054902, 0.388235, 1)
+offset_left = 90.0
+offset_top = 204.0
+offset_right = 110.0
+offset_bottom = 504.0
+max_value = 10.0
+value = 5.0
+fill_mode = 3
+show_percentage = false
 
 [node name="PlayerHPLabel" type="Label" parent="."]
 offset_left = 194.0
@@ -185,8 +286,19 @@ label_settings = SubResource("LabelSettings_kk7xp")
 position = Vector2(1101, 391)
 scale = Vector2(-7, 7)
 sprite_frames = SubResource("SpriteFrames_npjga")
-animation = &"die"
+animation = &"use"
 autoplay = "idle"
+
+[node name="EnemyHPBar" type="ProgressBar" parent="."]
+modulate = Color(1, 0.054902, 0.388235, 1)
+offset_left = 1200.0
+offset_top = 204.0
+offset_right = 1220.0
+offset_bottom = 504.0
+max_value = 10.0
+value = 5.0
+fill_mode = 3
+show_percentage = false
 
 [node name="EnemyHPLabel" type="Label" parent="."]
 offset_left = 1094.0
@@ -237,6 +349,7 @@ label_settings = SubResource("LabelSettings_vqcop")
 autowrap_mode = 2
 
 [node name="GameOverPanel" type="Panel" parent="."]
+visible = false
 offset_left = 369.0
 offset_top = 71.0
 offset_right = 969.0

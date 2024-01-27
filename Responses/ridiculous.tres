@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_2x874")
-_id = 302
+_id = 502
 _contentEN = "That's a RIDICULOUS question!"
 _contentZH = "这是个愚蠢的问题！"

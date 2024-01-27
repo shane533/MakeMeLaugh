@@ -37,7 +37,8 @@ var _selecting_response: Response
 var _unused_insults: Array[Insult]
 var _options: Array[Option]
 var _is_ticking: bool
-var _audiences:Array[AnimatedSprite2D]
+var _left_audiences:Array[AnimatedSprite2D]
+var _right_audiences:Array[AnimatedSprite2D]
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -54,13 +55,17 @@ func hide_game_over_panel():
 	$GameOverPanel.visible = false
 
 func init_hps():
-	_player_hp = 3
-	_enemy_hp = 3
+	_player_hp = 5
+	_enemy_hp = 5
 	update_hp_labels()
 	
 func update_hp_labels():
 	$PlayerHPLabel.text = "HP: %d" % _player_hp
-	$EnemyHPLabel.text = "HP: %d" % _enemy_hp	
+	$EnemyHPLabel.text = "HP: %d" % _enemy_hp
+	var tween = create_tween()
+	tween.tween_property($PlayerHPBar, "value", _player_hp, 1)
+	tween.parallel().tween_property($EnemyHPBar, "value", _enemy_hp, 1)
+
 
 func hide_labels():
 	insult_label.visible = false
@@ -79,6 +84,8 @@ func clear_options():
 func wait_for_player_insult() -> GameState:
 	hide_labels()
 	idle_characters()
+	if len(_unused_insults) < 3:
+		_unused_insults = insults_don.duplicate()
 	_unused_insults.shuffle()
 	clear_options()
 	for i in range(3):
@@ -125,8 +132,6 @@ func enemy_insulting() -> GameState:
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_insulting)
-	$SFX/ShockSFX.play()
-	#audiences_cheer()
 	return GameState.EnemyInsulting
 	
 func player_insulting() -> GameState:
@@ -140,8 +145,6 @@ func player_insulting() -> GameState:
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(2)
 	tween.tween_callback(finish_insulting)
-	$SFX/ShockSFX.play()
-	#audiences_cheer()
 	return GameState.PlayerInsulting
 	
 func enemy_responsing() -> GameState:
@@ -157,8 +160,6 @@ func enemy_responsing() -> GameState:
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
-	$SFX/LaughSFX.play()
-	#audiences_cheer()
 	return GameState.EnemyResponsing
 	
 func player_responsing() -> GameState:
@@ -172,10 +173,6 @@ func player_responsing() -> GameState:
 	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
-	if _selecting_insult._responses.has(_selecting_response._id):
-		$SFX/LaughSFX.play()
-	else:
-		$SFX/HissSFX.play()
 	#audiences_cheer()
 	return GameState.PlayerResponsing
 	
@@ -241,8 +238,12 @@ func is_game_over() -> bool:
 	return _player_hp == 0 or _enemy_hp == 0
 	
 func game_over() -> GameState:
-	var sprite:AnimatedSprite2D = $PlayerSprite2D if _player_hp == 0 else $EnemySprite2D
+	var is_player_die = _player_hp == 0
+	var sprite:AnimatedSprite2D = $PlayerSprite2D if is_player_die else $EnemySprite2D
 	sprite.play("die")
+	var sprite2:AnimatedSprite2D = $PlayerSprite2D if not is_player_die else $EnemySprite2D
+	sprite2.play("use")
+	final_audience_cheer(not is_player_die)
 	hide_labels()
 	$GameOverPanel.self_modulate.a = 0.01
 	$GameOverPanel.visible = true
@@ -250,9 +251,11 @@ func game_over() -> GameState:
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
 	return GameState.GameOver
 
+func is_response_win() -> bool:
+	return _selecting_insult._responses.has(_selecting_response._id)
+
 func settle_damage(is_player_insult: bool) -> GameState:
-	var response_win: bool = _selecting_insult._responses.has(_selecting_response._id)
-	if (response_win and is_player_insult) or (not response_win and (not is_player_insult)):
+	if (is_response_win() and is_player_insult) or (not is_response_win() and (not is_player_insult)):
 		character_hurt(true)
 	else:
 		character_hurt(false)
@@ -263,8 +266,10 @@ func character_hurt(is_player:bool):
 	var sprite:AnimatedSprite2D = $PlayerSprite2D if is_player else $EnemySprite2D
 	if is_player:
 		_player_hp -= 1
+		_enemy_hp += 1
 	else:
 		_enemy_hp -= 1
+		_player_hp += 1
 	update_hp_labels()
 	sprite.play("hurt")
 	var tween = create_tween()
@@ -378,16 +383,50 @@ func init_audiences():
 		audi.animation = anim
 		audi.position.x = x
 		audi.position.y = y
-		_audiences.push_back(audi)
+		if i < num/2:
+			_left_audiences.push_back(audi)
+		else:
+			_right_audiences.push_back(audi)
 		$Background/Crowd.add_child(audi)
-		
+
+func final_audience_cheer(is_left: bool):
+	var audiences = _left_audiences if is_left else _right_audiences
+	for a in audiences:
+		a.play(a.animation, 3)		
+	$SFX/LaughSFX.play()
+
 func audiences_cheer():
-	for ani in _audiences:
+	var is_left:bool = true
+	match _state:
+		GameState.PlayerInsulting:
+			is_left = true
+			$SFX/ShockSFX.play()
+		GameState.EnemyInsulting:
+			is_left = false
+			$SFX/ShockSFX.play()
+		GameState.PlayerResponsing:
+			if is_response_win():
+				is_left = true
+				$SFX/LaughSFX.play()
+			else:
+				is_left = false
+				$SFX/HissSFX.play()
+		GameState.EnemyResponsing:
+			if is_response_win():
+				is_left = false
+				$SFX/LaughSFX.play()
+			else:
+				is_left = true
+				$SFX/HissSFX.play()
+	var audiences = _left_audiences if is_left else _right_audiences
+	for ani in audiences:
 		ani.play(ani.animation, 3)
 	var tween = create_tween()
 	tween.tween_interval(1)
 	tween.tween_callback(audiences_stop)
 	
 func audiences_stop():
-	for ani in _audiences:
+	for ani in _left_audiences:
+		ani.stop()
+	for ani in _right_audiences:
 		ani.stop()
