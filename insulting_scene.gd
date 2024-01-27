@@ -94,7 +94,7 @@ func wait_for_player_response() -> GameState:
 	debug("Wait for player response")
 	return GameState.WaitForPlayerResponse
 
-func enemy_insult():
+func enemy_insult() -> GameState:
 	hide_labels()
 	idle_characters()
 	_selecting_insult = insults_joe.pick_random()
@@ -105,8 +105,10 @@ func enemy_insult():
 	tween.parallel().tween_property(insult_label, "position", INSULT_POS, LABEL_FLY_DURATION)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_insulting)
+	return GameState.EnemyInsulting
 	
 func player_insulting() -> GameState:
+	clear_options()
 	init_insult_label(_selecting_insult, true)
 	var tween = create_tween()
 	tween.tween_property(insult_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
@@ -128,6 +130,7 @@ func enemy_responsing() -> GameState:
 	return GameState.EnemyResponsing
 	
 func player_responsing() -> GameState:
+	clear_options()
 	init_response_label(_selecting_response, true)
 	var tween = create_tween()
 	tween.tween_property(response_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
@@ -170,7 +173,7 @@ func next_state():
 		GameState.PlayerInsulting:
 			debug("go enemy response")
 			_state = enemy_responsing()
-		GameState.WaitForPlayerInsult:
+		GameState.WaitForPlayerResponse:
 			debug("go player response")
 			_state = player_responsing()
 		GameState.PlayerResponsing:
@@ -252,6 +255,7 @@ func on_option_selected(id):
 	debug("Option %d Selected!" % id)
 	if _state == GameState.WaitForPlayerInsult:
 		_selecting_insult = get_insult_by_id(id)
+		_unused_insults.erase(_selecting_insult)
 		next_state()
 	elif _state == GameState.WaitForPlayerResponse:
 		_selecting_response = get_response_by_id(id)
