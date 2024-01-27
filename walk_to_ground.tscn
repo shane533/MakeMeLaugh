@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvyvq1o5yq72w"]
+[gd_scene load_steps=4 format=3 uid="uid://dvyvq1o5yq72w"]
 
+[ext_resource type="Script" path="res://walk_to_ground.gd" id="1_5l0ok"]
 [ext_resource type="PackedScene" uid="uid://bcj6culq70bj1" path="res://enemy_sprite_2d.tscn" id="1_nvvyl"]
 [ext_resource type="PackedScene" uid="uid://c8jqjyqs7b5rj" path="res://player_sprite_2d.tscn" id="2_oykty"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_5l0ok")
 
 [node name="EnemySprite2D" parent="." instance=ExtResource("1_nvvyl")]
 position = Vector2(1380, 520)
@@ -12,3 +14,7 @@ scale = Vector2(-5, 5)
 [node name="PlayerSprite2D" parent="." instance=ExtResource("2_oykty")]
 position = Vector2(-125, 520)
 scale = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
