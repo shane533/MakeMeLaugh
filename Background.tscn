@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yd7ooh62dvfs"]
+[gd_scene load_steps=9 format=3 uid="uid://c1xesrkgh7yqc"]
 
 [ext_resource type="Script" path="res://Background.gd" id="1_55f0s"]
 [ext_resource type="Texture2D" uid="uid://bjiunsg5sxsa6" path="res://PNG/background1.png" id="1_v4bsx"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbsagv13rv7vr" path="res://PNG/Building2.png" id="3_vbupk"]
 [ext_resource type="Texture2D" uid="uid://cuq3vck0urev6" path="res://PNG/Building1.png" id="4_qe0u1"]
 [ext_resource type="Texture2D" uid="uid://ggw2etvw7d8k" path="res://PNG/window.png" id="5_8cxix"]
-[ext_resource type="PackedScene" path="res://walk_to_ground.tscn" id="8_sl2vx"]
+[ext_resource type="PackedScene" uid="uid://dvyvq1o5yq72w" path="res://walk_to_ground.tscn" id="8_sl2vx"]
 [ext_resource type="AudioStream" uid="uid://gnref65s4qjs" path="res://SFX/typing.mp3" id="9_c7mow"]
 
 [node name="Node2D" type="Node2D"]
@@ -45,9 +45,10 @@ offset_top = 93.0
 offset_right = 1091.0
 offset_bottom = 568.0
 theme_override_font_sizes/font_size = 50
-text = "  在4202年的某天，川川来到了这里，"
+text = "  在4202年的某天，川川来到了这里，danshi "
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="typing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_c7mow")
