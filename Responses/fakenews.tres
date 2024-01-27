@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ociwd")
-_id = 301
+_id = 501
 _contentEN = "That's FAKE NEWS"
 _contentZH = "那是假新闻！"

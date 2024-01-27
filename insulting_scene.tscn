@@ -21,7 +21,7 @@
 [ext_resource type="Resource" uid="uid://bew4md5udeisd" path="res://Responses/taught.tres" id="11_ku1dh"]
 [ext_resource type="Resource" uid="uid://csfv6ei54c0ls" path="res://Responses/fakenews.tres" id="12_ljpic"]
 [ext_resource type="Resource" uid="uid://dtowvoccv0uke" path="res://Responses/ridiculous.tres" id="13_y0or7"]
-[ext_resource type="Resource" path="res://Responses/knowall.tres" id="14_dlp4g"]
+[ext_resource type="Resource" uid="uid://kswokbnwv05b" path="res://Responses/knowall.tres" id="14_dlp4g"]
 [ext_resource type="Texture2D" uid="uid://der52arcktkib" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_0.png" id="21_cugbm"]
 [ext_resource type="Texture2D" uid="uid://bfs8ekxkj6uiy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_1.png" id="22_a4x18"]
 [ext_resource type="Texture2D" uid="uid://cfj5jh4dqrkbj" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_0.png" id="23_f7wfn"]

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_8t0gn")
-_id = 303
-_contentEN = "Don't talk to me like that, there's nothing I don't know."
-_contentZH = "别这么跟我说话，没什么是我不懂的。"
+_id = 503
+_contentEN = "No one knows this better than me!"
+_contentZH = "没人比我懂得更多！"

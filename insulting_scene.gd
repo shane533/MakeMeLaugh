@@ -9,8 +9,6 @@ enum GameState {
 	EnemyInsulting,
 	EnemyResponsing,
 	DamageSettling,
-	DamageSettlePlayer,
-	DamageSettleEnemy,
 	GameOver
 }
 
@@ -39,6 +37,8 @@ var _selecting_response: Response
 var _unused_insults: Array[Insult]
 var _options: Array[Option]
 var _is_ticking: bool
+var _left_audiences:Array[AnimatedSprite2D]
+var _right_audiences:Array[AnimatedSprite2D]
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -55,13 +55,17 @@ func hide_game_over_panel():
 	$GameOverPanel.visible = false
 
 func init_hps():
-	_player_hp = 3
-	_enemy_hp = 3
+	_player_hp = 5
+	_enemy_hp = 5
 	update_hp_labels()
 	
 func update_hp_labels():
 	$PlayerHPLabel.text = "HP: %d" % _player_hp
-	$EnemyHPLabel.text = "HP: %d" % _enemy_hp	
+	$EnemyHPLabel.text = "HP: %d" % _enemy_hp
+	var tween = create_tween()
+	tween.tween_property($PlayerHPBar, "value", _player_hp, 1)
+	tween.parallel().tween_property($EnemyHPBar, "value", _enemy_hp, 1)
+
 
 func hide_labels():
 	insult_label.visible = false
@@ -80,6 +84,8 @@ func clear_options():
 func wait_for_player_insult() -> GameState:
 	hide_labels()
 	idle_characters()
+	if len(_unused_insults) < 3:
+		_unused_insults = insults_don.duplicate()
 	_unused_insults.shuffle()
 	clear_options()
 	for i in range(3):
@@ -112,15 +118,18 @@ func stop_ticking():
 	$OptionContainer/ProgressBar.visible = false
 	$OptionContainer/ProgressBar.value = 0
 
-func enemy_insult() -> GameState:
+func enemy_insulting() -> GameState:
 	hide_labels()
 	idle_characters()
 	_selecting_insult = insults_joe.pick_random()
 	init_insult_label(_selecting_insult, false)
 	debug("Enemy Insult")
+	$EnemySprite2D.play("talk")
+	$PlayerSprite2D.play("idle")
 	var tween = create_tween()
 	tween.tween_property(insult_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
 	tween.parallel().tween_property(insult_label, "position", INSULT_POS, LABEL_FLY_DURATION)
+	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_insulting)
 	return GameState.EnemyInsulting
@@ -128,10 +137,13 @@ func enemy_insult() -> GameState:
 func player_insulting() -> GameState:
 	clear_options()
 	init_insult_label(_selecting_insult, true)
+	$PlayerSprite2D.play("talk")
+	$EnemySprite2D.play("idle")
 	var tween = create_tween()
 	tween.tween_property(insult_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
 	tween.parallel().tween_property(insult_label, "position", INSULT_POS, LABEL_FLY_DURATION)
-	tween.tween_interval(1)
+	tween.tween_callback(audiences_cheer)
+	tween.tween_interval(2)
 	tween.tween_callback(finish_insulting)
 	return GameState.PlayerInsulting
 	
@@ -140,9 +152,12 @@ func enemy_responsing() -> GameState:
 	var res_id = _selecting_insult._responses[0]
 	_selecting_response = get_response_by_id(res_id)
 	init_response_label(_selecting_response, false)
+	$EnemySprite2D.play("talk")
+	$PlayerSprite2D.play("idle")
 	var tween = create_tween()
 	tween.tween_property(response_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
 	tween.parallel().tween_property(response_label, "position", RESPONSE_POS, LABEL_FLY_DURATION)
+	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
 	return GameState.EnemyResponsing
@@ -150,11 +165,15 @@ func enemy_responsing() -> GameState:
 func player_responsing() -> GameState:
 	clear_options()
 	init_response_label(_selecting_response, true)
+	$PlayerSprite2D.play("talk")
+	$EnemySprite2D.play("idle")
 	var tween = create_tween()
 	tween.tween_property(response_label, "scale", Vector2(1.5, 1.5), LABEL_FLY_DURATION)
 	tween.parallel().tween_property(response_label, "position", RESPONSE_POS, LABEL_FLY_DURATION)
+	tween.tween_callback(audiences_cheer)
 	tween.tween_interval(1)
 	tween.tween_callback(finish_responsing)
+	#audiences_cheer()
 	return GameState.PlayerResponsing
 	
 func finish_insulting():
@@ -184,7 +203,7 @@ func next_state():
 			if _is_player_go_first:
 				_state = wait_for_player_insult()
 			else:
-				_state = enemy_insult()
+				_state = enemy_insulting()
 		GameState.WaitForPlayerInsult:
 			debug("go player insult")
 			_state = player_insulting()
@@ -212,19 +231,19 @@ func next_state():
 				if _is_player_go_first:
 					_state = wait_for_player_insult()
 				else:
-					_state = enemy_insult()
+					_state = enemy_insulting()
 			debug("SettlingDamage")
-		GameState.DamageSettlePlayer:
-			debug("go game over or wait for player insult")
-		GameState.DamageSettleEnemy:
-			debug("go game over or enemy insult")
 
 func is_game_over() -> bool:
 	return _player_hp == 0 or _enemy_hp == 0
 	
 func game_over() -> GameState:
-	var sprite:AnimatedSprite2D = $PlayerSprite2D if _player_hp == 0 else $EnemySprite2D
+	var is_player_die = _player_hp == 0
+	var sprite:AnimatedSprite2D = $PlayerSprite2D if is_player_die else $EnemySprite2D
 	sprite.play("die")
+	var sprite2:AnimatedSprite2D = $PlayerSprite2D if not is_player_die else $EnemySprite2D
+	sprite2.play("use")
+	final_audience_cheer(not is_player_die)
 	hide_labels()
 	$GameOverPanel.self_modulate.a = 0.01
 	$GameOverPanel.visible = true
@@ -232,9 +251,11 @@ func game_over() -> GameState:
 	tween.tween_property($GameOverPanel, "self_modulate:a", 1, 0.5)
 	return GameState.GameOver
 
+func is_response_win() -> bool:
+	return _selecting_insult._responses.has(_selecting_response._id)
+
 func settle_damage(is_player_insult: bool) -> GameState:
-	var response_win: bool = _selecting_insult._responses.has(_selecting_response._id)
-	if (response_win and is_player_insult) or (not response_win and (not is_player_insult)):
+	if (is_response_win() and is_player_insult) or (not is_response_win() and (not is_player_insult)):
 		character_hurt(true)
 	else:
 		character_hurt(false)
@@ -245,8 +266,10 @@ func character_hurt(is_player:bool):
 	var sprite:AnimatedSprite2D = $PlayerSprite2D if is_player else $EnemySprite2D
 	if is_player:
 		_player_hp -= 1
+		_enemy_hp += 1
 	else:
 		_enemy_hp -= 1
+		_player_hp += 1
 	update_hp_labels()
 	sprite.play("hurt")
 	var tween = create_tween()
@@ -325,6 +348,7 @@ func get_response_content(res:Response) -> String:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#prepare_options()
+	init_audiences()
 	game_start(true)
 	pass # Replace with function body.
 
@@ -344,3 +368,65 @@ func debug(str: String):
 func _on_button_pressed():
 	game_start(randi()%2==0)
 	pass # Replace with function body.
+	
+func init_audiences():
+	debug("Init Audiences")
+	var num:int = 30
+	var audi_s = load("res://audience.tscn")
+	for i in range(num):
+		var audi = audi_s.instantiate()
+		var a = randi() % 6 + 1
+		var b = randi() % 6 + 1
+		var x = (i%30) * 1280/30 + randi() % 32
+		var y = randi() % 20 + 710
+		var anim = "%d-%d" % [a, b]
+		audi.animation = anim
+		audi.position.x = x
+		audi.position.y = y
+		if i < num/2:
+			_left_audiences.push_back(audi)
+		else:
+			_right_audiences.push_back(audi)
+		$Background/Crowd.add_child(audi)
+
+func final_audience_cheer(is_left: bool):
+	var audiences = _left_audiences if is_left else _right_audiences
+	for a in audiences:
+		a.play(a.animation, 3)		
+	$SFX/LaughSFX.play()
+
+func audiences_cheer():
+	var is_left:bool = true
+	match _state:
+		GameState.PlayerInsulting:
+			is_left = true
+			$SFX/ShockSFX.play()
+		GameState.EnemyInsulting:
+			is_left = false
+			$SFX/ShockSFX.play()
+		GameState.PlayerResponsing:
+			if is_response_win():
+				is_left = true
+				$SFX/LaughSFX.play()
+			else:
+				is_left = false
+				$SFX/HissSFX.play()
+		GameState.EnemyResponsing:
+			if is_response_win():
+				is_left = false
+				$SFX/LaughSFX.play()
+			else:
+				is_left = true
+				$SFX/HissSFX.play()
+	var audiences = _left_audiences if is_left else _right_audiences
+	for ani in audiences:
+		ani.play(ani.animation, 3)
+	var tween = create_tween()
+	tween.tween_interval(1)
+	tween.tween_callback(audiences_stop)
+	
+func audiences_stop():
+	for ani in _left_audiences:
+		ani.stop()
+	for ani in _right_audiences:
+		ani.stop()
