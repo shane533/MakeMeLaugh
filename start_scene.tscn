@@ -62,33 +62,6 @@ text = "中文"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="start_button1" type="Button" parent="."]
-visible = false
-offset_left = 1050.0
-offset_top = 400.0
-offset_right = 1240.0
-offset_bottom = 449.0
-text = "开始"
-flat = true
-
-[node name="language_button1" type="Button" parent="."]
-visible = false
-offset_left = 1050.0
-offset_top = 500.0
-offset_right = 1200.0
-offset_bottom = 550.0
-text = "中文"
-flat = true
-
-[node name="exit_button1" type="Button" parent="."]
-visible = false
-offset_left = 1050.0
-offset_top = 600.0
-offset_right = 1200.0
-offset_bottom = 650.0
-text = "退出"
-flat = true
-
 [node name="title" type="Label" parent="."]
 offset_left = 500.0
 offset_top = 300.0
@@ -96,5 +69,5 @@ offset_right = 650.0
 offset_bottom = 350.0
 text = "这是一个游戏"
 
-[connection signal="pressed" from="start_button1" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="exit_button1" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
