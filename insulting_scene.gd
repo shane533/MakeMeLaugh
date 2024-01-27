@@ -20,10 +20,12 @@ const INSULT_POS:Vector2 = Vector2(400, 150)
 const RESPONSE_POS:Vector2 = Vector2(450, 200)
 
 @export var insults_don: Array[Insult] 
-@export var insults_joe: Array[Insult]
+@export var insults_joe_2020: Array[Insult]
+@export var insults_joe_2024: Array[Insult]
 @export var responses_joe: Array[Response] 
 @export var responses_don: Array[Response]
-@export var default_responses: Array[Response]
+@export var default_responses_don: Array[Response]
+@export var default_responses_joe: Array[Response]
 @export var insult_label: Label
 @export var response_label: Label
 @export var is_zh: bool = true
@@ -39,6 +41,7 @@ var _options: Array[Option]
 var _is_ticking: bool
 var _left_audiences:Array[AnimatedSprite2D]
 var _right_audiences:Array[AnimatedSprite2D]
+var _is_2020: bool = true# 2020 is a war meant to lose
 
 func game_start(player_go_first:bool):
 	hide_game_over_panel()
@@ -121,7 +124,11 @@ func stop_ticking():
 func enemy_insulting() -> GameState:
 	hide_labels()
 	idle_characters()
-	_selecting_insult = insults_joe.pick_random()
+	if _is_2020:
+		_selecting_insult = insults_joe_2020.pick_random()
+		insults_joe_2020.erase(_selecting_insult)
+	else:
+		_selecting_insult = insults_joe_2024.pick_random()
 	init_insult_label(_selecting_insult, false)
 	debug("Enemy Insult")
 	$EnemySprite2D.play("talk")
@@ -149,8 +156,11 @@ func player_insulting() -> GameState:
 	
 func enemy_responsing() -> GameState:
 	#if enemy must won
-	var res_id = _selecting_insult._responses[0]
-	_selecting_response = get_response_by_id(res_id)
+	if _is_2020 or randi()%2==0:
+		var res_id = _selecting_insult._responses[0]
+		_selecting_response = get_response_by_id(res_id)
+	else:
+		_selecting_response = default_responses_joe.pick_random()
 	init_response_label(_selecting_response, false)
 	$EnemySprite2D.play("talk")
 	$PlayerSprite2D.play("idle")
@@ -311,17 +321,20 @@ func on_option_selected(id):
 func select_default_response():
 	debug("Ticking select default response")
 	stop_ticking()
-	_selecting_response = default_responses.pick_random()
+	_selecting_response = default_responses_don.pick_random()
 	next_state()
 
 func get_insult_by_id(id) -> Insult:
 	for ins in insults_don:
 		if ins._id == id:
 			return ins
-	for ins in insults_joe:
+	for ins in insults_joe_2020:
 		if ins._id == id:
 			return ins
-			
+	for ins in insults_joe_2024:
+		if ins._id == id:
+			return ins
+					
 	return null
 
 func get_response_by_id(id) -> Response:

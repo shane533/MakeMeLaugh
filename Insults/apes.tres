@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_kuep0")
-_id = 107
+_id = 307
 _contentEN = "I've spoken with apes more polite than you!"
 _contentZH = "我跟比你更有礼貌的猩猩说过话"
 _responses = Array[int]([207])

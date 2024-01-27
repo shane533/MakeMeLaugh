@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://ba0tu4v7cc7rk"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_cdgwe"]
+
+[resource]
+script = ExtResource("1_cdgwe")
+_id = 303
+_contentEN = "My son did not do a single thing wrong!"
+_contentZH = "我儿子没做错任何事!"
+_responses = Array[int]([202])

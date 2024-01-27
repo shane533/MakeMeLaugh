@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://bctf8pie0kodb"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_w67ch"]
+
+[resource]
+script = ExtResource("1_w67ch")
+_id = 504
+_contentEN = "Where am I?"
+_contentZH = "我在哪儿呢？"

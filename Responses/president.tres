@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://bgeyd0e2d7l6d"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_d3cst"]
+
+[resource]
+script = ExtResource("1_d3cst")
+_id = 213
+_contentEN = "So you should let him run for prisident."
+_contentZH = "那怎么没让他来竞选总统"

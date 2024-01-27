@@ -1,6 +1,7 @@
-[gd_scene load_steps=66 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=78 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
+[ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
 [ext_resource type="Resource" uid="uid://63757bkhg7mq" path="res://Insults/apes.tres" id="2_ulf60"]
 [ext_resource type="Resource" uid="uid://b6pbahnecymw8" path="res://Insults/diaper.tres" id="3_4hrsk"]
 [ext_resource type="Texture2D" uid="uid://dtuwbblwn4qtt" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_0.png" id="4_5csni"]
@@ -9,27 +10,37 @@
 [ext_resource type="Resource" uid="uid://dkgkvpg4735t0" path="res://Insults/iq.tres" id="5_fmjxt"]
 [ext_resource type="Texture2D" uid="uid://c2pg8b51muso" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_2.png" id="6_1ql0d"]
 [ext_resource type="Resource" uid="uid://b4ji6cdws7lb" path="res://Insults/sleepy.tres" id="6_4s80q"]
+[ext_resource type="Resource" uid="uid://bjk1e4ra4q836" path="res://Insults/tradewar.tres" id="7_gk7bb"]
 [ext_resource type="Resource" uid="uid://dq8o7dmygiipr" path="res://Responses/borrow.tres" id="7_iorqj"]
 [ext_resource type="Texture2D" uid="uid://dqkm5h67ug7if" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_3.png" id="7_jjsdq"]
 [ext_resource type="Texture2D" uid="uid://cqcs1hy8t84hb" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_4.png" id="8_77g1d"]
 [ext_resource type="Resource" uid="uid://bslicd3ya36ul" path="res://Responses/idiot.tres" id="8_jihh8"]
+[ext_resource type="Resource" uid="uid://cwdlkhgt06r5m" path="res://Insults/covid.tres" id="8_tq2c0"]
+[ext_resource type="Resource" uid="uid://ba0tu4v7cc7rk" path="res://Insults/son.tres" id="9_bt2gn"]
 [ext_resource type="Texture2D" uid="uid://dxamt7ocearki" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_5.png" id="9_humbb"]
 [ext_resource type="Resource" uid="uid://d0k25sa3xstk3" path="res://Responses/lullaby.tres" id="9_p7gqr"]
 [ext_resource type="Resource" uid="uid://v76pi8rx3in5" path="res://Responses/reunion.tres" id="10_1dccu"]
+[ext_resource type="Resource" uid="uid://0p76cclwwq40" path="res://Insults/rising.tres" id="10_dk2fr"]
 [ext_resource type="Texture2D" uid="uid://bnp2igtbbij5s" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_death_6.png" id="10_yqg3x"]
+[ext_resource type="Resource" uid="uid://ciytv2mac42wc" path="res://Insults/parrot.tres" id="11_h4kmi"]
 [ext_resource type="Resource" uid="uid://bew4md5udeisd" path="res://Responses/taught.tres" id="11_ku1dh"]
+[ext_resource type="Resource" uid="uid://dffnu3d8rpo0n" path="res://Insults/voice.tres" id="12_7ka5i"]
 [ext_resource type="Resource" uid="uid://csfv6ei54c0ls" path="res://Responses/fakenews.tres" id="12_ljpic"]
 [ext_resource type="Resource" uid="uid://dtowvoccv0uke" path="res://Responses/ridiculous.tres" id="13_y0or7"]
 [ext_resource type="Resource" uid="uid://du8qa3urmb5u0" path="res://Responses/knowall.tres" id="14_dlp4g"]
+[ext_resource type="Resource" uid="uid://ei45jw8niood" path="res://Insults/ideas.tres" id="14_qnee8"]
 [ext_resource type="Texture2D" uid="uid://c8iefvxr4xp3v" path="res://BattleScene/1.png" id="15_awv0j"]
-[ext_resource type="Texture2D" uid="uid://c2y4llq5oj2f3" path="res://BattleScene/2.png" id="16_avxvd"]
-[ext_resource type="Texture2D" uid="uid://c8e6xaq3cyt4w" path="res://BattleScene/3.png" id="17_4i4dq"]
-[ext_resource type="Texture2D" uid="uid://dgm504brojgfp" path="res://BattleScene/4.png" id="18_q6p8m"]
-[ext_resource type="Texture2D" uid="uid://ce8r0j5cueps3" path="res://BattleScene/5.png" id="19_tbmya"]
-[ext_resource type="Texture2D" uid="uid://csjml5x0fthv7" path="res://BattleScene/webpage.png" id="20_mbyni"]
+[ext_resource type="Resource" uid="uid://d0u6361bccvki" path="res://Insults/stupid.tres" id="15_l6xmc"]
+[ext_resource type="Resource" uid="uid://cvvkqk4nnc18" path="res://Responses/bathroom.tres" id="15_o12kc"]
+[ext_resource type="Resource" uid="uid://dtc41arvd0lda" path="res://Responses/notes.tres" id="16_nhm88"]
+[ext_resource type="Resource" uid="uid://bctf8pie0kodb" path="res://Responses/where.tres" id="17_pdeto"]
 [ext_resource type="Texture2D" uid="uid://der52arcktkib" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_0.png" id="21_cugbm"]
+[ext_resource type="Resource" uid="uid://bme2f3geg5ttp" path="res://Responses/comfortable.tres" id="21_tegw8"]
 [ext_resource type="Texture2D" uid="uid://bfs8ekxkj6uiy" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_damage_1.png" id="22_a4x18"]
+[ext_resource type="Resource" uid="uid://csdh2bxky1hc5" path="res://Responses/inflation.tres" id="22_ska3p"]
 [ext_resource type="Texture2D" uid="uid://cfj5jh4dqrkbj" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_0.png" id="23_f7wfn"]
+[ext_resource type="Resource" uid="uid://bgeyd0e2d7l6d" path="res://Responses/president.tres" id="23_qkt2l"]
+[ext_resource type="Resource" uid="uid://bdo5vg48dr4lg" path="res://Responses/understand.tres" id="24_kf3dx"]
 [ext_resource type="Texture2D" uid="uid://dsbhcav28vj41" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_1.png" id="24_rsmcl"]
 [ext_resource type="Texture2D" uid="uid://c3dpvpm42kd27" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_2.png" id="25_qn2vl"]
 [ext_resource type="Texture2D" uid="uid://jnfa766txho0" path="res://Chars/Male/Character 1/Clothes 1/Character1M_1_idle_3.png" id="26_h4kn5"]
@@ -61,6 +72,9 @@
 [ext_resource type="Texture2D" uid="uid://c25qbcbc483uh" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_10.png" id="50_550c8"]
 [ext_resource type="Texture2D" uid="uid://ntbiqj0vc0gm" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_11.png" id="51_mnfk0"]
 [ext_resource type="Texture2D" uid="uid://bcf26hpbr7kue" path="res://Chars/Male/Character 2/Clothes 2/Character2M_2_use_12.png" id="52_o2fpm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npx5q"]
+load_path = "res://.godot/imported/2.png-b4bb4e73f41b318e86d3ea875a10ea27.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npjga"]
 animations = [{
@@ -212,11 +226,13 @@ font_size = 48
 
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_label", "response_label")]
 script = ExtResource("1_58qa0")
-insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
-insults_joe = Array[Resource("res://insult.gd")]([ExtResource("2_ulf60"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
+insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_pfpcq"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q")])
+insults_joe_2020 = Array[Resource("res://insult.gd")]([ExtResource("7_gk7bb"), ExtResource("8_tq2c0")])
+insults_joe_2024 = Array[Resource("res://insult.gd")]([ExtResource("9_bt2gn"), ExtResource("10_dk2fr"), ExtResource("11_h4kmi"), ExtResource("12_7ka5i"), ExtResource("2_ulf60"), ExtResource("14_qnee8"), ExtResource("15_l6xmc")])
 responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
-responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh")])
-default_responses = Array[Resource("res://response.gd")]([ExtResource("12_ljpic"), ExtResource("13_y0or7"), ExtResource("14_dlp4g")])
+responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("21_tegw8"), ExtResource("22_ska3p"), ExtResource("23_qkt2l"), ExtResource("24_kf3dx")])
+default_responses_don = Array[Resource("res://response.gd")]([ExtResource("12_ljpic"), ExtResource("13_y0or7"), ExtResource("14_dlp4g")])
+default_responses_joe = Array[Resource("res://response.gd")]([ExtResource("15_o12kc"), ExtResource("16_nhm88"), ExtResource("17_pdeto")])
 insult_label = NodePath("InsultLabel")
 response_label = NodePath("ResponseLabel")
 
@@ -227,32 +243,10 @@ centered = false
 [node name="Crowd" type="Node" parent="Background"]
 
 [node name="Layer1" type="Sprite2D" parent="Background"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2.21875, 2.21914)
-texture = ExtResource("16_avxvd")
-centered = false
-
-[node name="Layer2" type="Sprite2D" parent="Background"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2.21875, 2.21914)
-texture = ExtResource("17_4i4dq")
-centered = false
-
-[node name="Layer3" type="Sprite2D" parent="Background"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2.21875, 2.21914)
-texture = ExtResource("18_q6p8m")
-centered = false
-
-[node name="Layer4" type="Sprite2D" parent="Background"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2.21875, 2.21914)
-texture = ExtResource("19_tbmya")
-centered = false
-
-[node name="Webpage" type="Sprite2D" parent="Background"]
 visible = false
-texture = ExtResource("20_mbyni")
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2.21875, 2.21914)
+texture = SubResource("CompressedTexture2D_npx5q")
 centered = false
 
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="."]
