@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dthh41tmdwmgj"]
+
+[ext_resource type="Script" path="res://start_scene.gd" id="1_ukghc"]
+[ext_resource type="Texture2D" uid="uid://dmj18rdqxg8nq" path="res://PNG/menu.png" id="2_v6svy"]
+[ext_resource type="Texture2D" uid="uid://2peof5twwbau" path="res://PNG/grey_button14.png" id="3_l076i"]
+[ext_resource type="Texture2D" uid="uid://b1ab7l1clogrx" path="res://PNG/grey_button15.png" id="4_sye6j"]
+
+[node name="StartScene" type="Node2D"]
+script = ExtResource("1_ukghc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_v6svy")
+
+[node name="exit_button" type="TextureButton" parent="."]
+offset_left = 1046.0
+offset_top = 599.0
+offset_right = 1236.0
+offset_bottom = 648.0
+texture_normal = ExtResource("3_l076i")
+
+[node name="Label" type="Label" parent="exit_button"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_right = 189.0
+offset_bottom = 49.0
+text = " 退出"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start_button" type="TextureButton" parent="."]
+offset_left = 1050.0
+offset_top = 400.0
+offset_right = 1240.0
+offset_bottom = 449.0
+texture_normal = ExtResource("4_sye6j")
+
+[node name="Label" type="Label" parent="start_button"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 49.0
+text = "开始"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="language_button" type="TextureButton" parent="."]
+offset_left = 1051.0
+offset_top = 502.0
+offset_right = 1241.0
+offset_bottom = 551.0
+texture_normal = ExtResource("4_sye6j")
+
+[node name="Label" type="Label" parent="language_button"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 49.0
+text = "中文"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="title" type="Label" parent="."]
+offset_left = 500.0
+offset_top = 300.0
+offset_right = 650.0
+offset_bottom = 350.0
+text = "这是一个游戏"
+
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
