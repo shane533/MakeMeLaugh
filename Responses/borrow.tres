@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://dq8o7dmygiipr"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_8seyc"]
+
+[resource]
+script = ExtResource("1_8seyc")
+_id = 201
+_contentEN = "Whay?Did you want to borrow one?"
+_contentZH = "怎么，你想借一条用吗？"

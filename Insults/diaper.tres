@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://b6pbahnecymw8"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_tw0xv"]
+
+[resource]
+script = ExtResource("1_tw0xv")
+_id = 101
+_contentEN = "Have you stopped wearing diapers yet?"
+_contentZH = "你还没戒掉尿布吗？"
+_responses = [201]

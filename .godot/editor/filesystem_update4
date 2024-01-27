@@ -1,0 +1,17 @@
+res://insulting_scene.gd
+res://insulting_scene.tscn
+res://character.gd
+res://option.gd
+res://insult.gd
+res://response.gd
+res://Texts/diaper.tres
+res://Insults/diaper.tres
+res://Insults/sleepy.tres
+res://Insults/dog.tres
+res://Insults/apes.tres
+res://Insults/iq.tres
+res://Responses/borrow.tres
+res://Responses/idiot.tres
+res://Responses/lullaby.tres
+res://Responses/reunion.tres
+res://Responses/taught.tres

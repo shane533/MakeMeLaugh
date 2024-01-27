@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://chbcdu6sne6g5"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_clghc"]
+
+[resource]
+script = ExtResource("1_clghc")
+_id = 103
+_contentEN = "I once owned a dog that was smarter than you."
+_contentZH = "我养过一条比你聪明的狗"
+_responses = Array[int]([203])

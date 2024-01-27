@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://d0k25sa3xstk3"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_2csg5"]
+
+[resource]
+script = ExtResource("1_2csg5")
+_id = 202
+_contentEN = "Did you finish your lullaby?"
+_contentZH = "你的摇篮曲唱完了吗？"

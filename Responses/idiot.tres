@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://bslicd3ya36ul"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_c0skv"]
+
+[resource]
+script = ExtResource("1_c0skv")
+_id = 209
+_contentEN = "Is that why you poped up when we search idiot on google?"
+_contentZH = "这就是在谷歌搜白痴会跳出来你照片的原因吗？"

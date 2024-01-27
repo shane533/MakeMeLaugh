@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://63757bkhg7mq"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_kuep0"]
+
+[resource]
+script = ExtResource("1_kuep0")
+_id = 107
+_contentEN = "I've spoken with apes more polite than you!"
+_contentZH = "我跟比你更有礼貌的猩猩说过话"
+_responses = Array[int]([207])

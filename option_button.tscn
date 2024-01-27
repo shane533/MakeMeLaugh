@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq21tysc76mvi"]
+
+[ext_resource type="Script" path="res://option.gd" id="1_oqfyx"]
+
+[node name="OptionButton" type="Button"]
+custom_minimum_size = Vector2(200, 40)
+text = "怎么，你想借一条用吗？"
+script = ExtResource("1_oqfyx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
