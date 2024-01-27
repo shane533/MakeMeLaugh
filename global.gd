@@ -3,6 +3,7 @@ extends Node
 class_name GlobalNode
 
 @export var is_ZH:bool = false 
+@export var is_2020:bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

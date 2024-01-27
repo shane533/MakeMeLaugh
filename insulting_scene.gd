@@ -47,7 +47,7 @@ var _options: Array[Option]
 var _is_ticking: bool
 var _left_audiences:Array[AnimatedSprite2D]
 var _right_audiences:Array[AnimatedSprite2D]
-var _is_2020: bool = true# 2020 is a war meant to lose
+#var _is_2020: bool = true# 2020 is a war meant to lose
 var _dialogs:Array[Dialog]
 
 func game_start(player_go_first:bool):
@@ -109,7 +109,7 @@ func wait_for_player_insult() -> GameState:
 func wait_for_player_response() -> GameState:
 	clear_options()
 	var out:Array
-	if _is_2020:
+	if _global.is_2020:
 		out = default_responses_don.duplicate()
 		out.shuffle()
 	else:
@@ -139,7 +139,7 @@ func stop_ticking():
 func enemy_insulting() -> GameState:
 	hide_labels()
 	idle_characters()
-	if _is_2020:
+	if _global._is_2020:
 		_selecting_insult = insults_joe_2020.pick_random()
 		insults_joe_2020.erase(_selecting_insult)
 	else:
@@ -172,7 +172,7 @@ func player_insulting() -> GameState:
 	
 func enemy_responsing() -> GameState:
 	#if enemy must won
-	if _is_2020 or randi()%2==0:
+	if _global.is_2020 or randi()%2==0:
 		var res_id = _selecting_insult._responses[0]
 		_selecting_response = get_response_by_id(res_id)
 	else:
@@ -409,8 +409,9 @@ func debug(str: String):
 
 
 func _on_button_pressed():
-	if _is_2020:
+	if _global.is_2020:
 		#TODO
+		_global.is_2020 = false
 		print("GO TO 2024")
 	else:
 		game_start(randi()%2==0)
