@@ -28,6 +28,8 @@ const RESPONSE_POS:Vector2 = Vector2(450, 200)
 @export var default_responses_joe: Array[Response]
 @export var insult_label: Label
 @export var response_label: Label
+@export var player_hp: HPBar
+@export var enemy_hp: HPBar
 #@export var is_zh: bool = true
 # 
 var _player_hp: int
@@ -66,11 +68,13 @@ func init_hps():
 	update_hp_labels()
 	
 func update_hp_labels():
-	$PlayerHPLabel.text = "HP: %d" % _player_hp
-	$EnemyHPLabel.text = "HP: %d" % _enemy_hp
-	var tween = create_tween()
-	tween.tween_property($PlayerHPBar, "value", _player_hp, 1)
-	tween.parallel().tween_property($EnemyHPBar, "value", _enemy_hp, 1)
+	player_hp.update_hp(_player_hp)
+	enemy_hp.update_hp(_enemy_hp)
+	#$PlayerHPLabel.text = "HP: %d" % _player_hp
+	#$EnemyHPLabel.text = "HP: %d" % _enemy_hp
+	#var tween = create_tween()
+	#tween.tween_property($PlayerHPBar, "value", _player_hp, 1)
+	#tween.parallel().tween_property($EnemyHPBar, "value", _enemy_hp, 1)
 
 
 func hide_labels():
@@ -353,7 +357,12 @@ func get_response_by_id(id) -> Response:
 	for res in responses_don:
 		if res._id == id:
 			return res
-			
+	for res in default_responses_don:
+		if res._id == id:
+			return res		
+	for res in default_responses_joe:
+		if res._id == id:
+			return res	
 	return null	
 	
 func get_insult_content(ins:Insult) -> String:
