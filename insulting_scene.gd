@@ -68,7 +68,7 @@ func game_start(player_go_first:bool):
 func start_banner_anim():
 	var str = ""
 	if _global.is_ZH:
-		str = "总统垃圾话辩论%d" % (2020 if _global.is_2020 else 2024)
+		str = "总统垃圾话辩论-%d" % (2020 if _global.is_2020 else 2024)
 	else:
 		str = "INSULTING Presidential Debate %d" % (2020 if _global.is_2020 else 2024)
 	$StartBanner/Label.text = str

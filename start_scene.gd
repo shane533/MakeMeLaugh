@@ -61,9 +61,9 @@ func _on_language_button_pressed():
 func update_button_texts():
 	if Global.is_ZH:
 		$start_button/Label.text = "MAGA!"
-		$language_button/Label.text = "语言:中文"
+		$language_button/Label.text = "语言: 中文"
 		$exit_button/Label.text = "退出"
 	else:
-		$language_button/Label.text = "Lang:English"
+		$language_button/Label.text = "Lang: English"
 		$exit_button/Label.text = "EXIT"
 		$start_button/Label.text = "MAGA!"
