@@ -424,7 +424,7 @@ texture = ExtResource("42_wndyk")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="GameOverPanel/Cheated"]
-position = Vector2(257, 183)
+position = Vector2(242, 183)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("43_w5g85")
 
@@ -434,26 +434,27 @@ texture = ExtResource("44_i30td")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="GameOverPanel/Maga"]
-position = Vector2(230, 188)
+position = Vector2(224, 187)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("45_orpng")
 
 [node name="Label" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 235.0
-offset_right = 399.0
-offset_bottom = 302.0
+offset_left = 74.0
+offset_top = 246.0
+offset_right = 377.0
+offset_bottom = 313.0
 text = "HE CHEATED!"
 label_settings = SubResource("LabelSettings_lgtil")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="GameOverPanel"]
 layout_mode = 0
 offset_left = 131.0
-offset_top = 381.0
+offset_top = 375.0
 offset_right = 321.0
-offset_bottom = 430.0
+offset_bottom = 424.0
 texture_normal = ExtResource("46_khu8v")
 texture_pressed = ExtResource("47_wmb5g")
 
@@ -535,6 +536,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsPanel" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(368, 19)
 texture = ExtResource("64_jsa61")
 centered = false
@@ -554,7 +556,7 @@ offset_left = 60.0
 offset_top = 131.0
 offset_right = 380.0
 offset_bottom = 201.0
-text = "策划：莱斯
+text = "策划：范易昂
 Designer: 莱斯"
 label_settings = SubResource("LabelSettings_kfup7")
 horizontal_alignment = 1

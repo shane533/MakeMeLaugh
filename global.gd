@@ -3,7 +3,7 @@ extends Node
 class_name GlobalNode
 
 @export var is_ZH:bool = false 
-@export var is_2020:bool = false
+@export var is_2020:bool = true
 
 var story_1_ZH: String = "测试测试测试1"
 var story_1_EN: String = "TESTTEST1"
