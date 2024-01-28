@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1dbivifwmel6" path="res://UI/John_head.png" id="6_tq3p5"]
 [ext_resource type="Texture2D" uid="uid://yms2b7e3icke" path="res://UI/AMERICA.png" id="7_3k7i4"]
 [ext_resource type="Texture2D" uid="uid://bheonftfncgik" path="res://UI/LAUGH.png" id="8_4tawd"]
+[ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="9_rg2e8"]
 [ext_resource type="Texture2D" uid="uid://dqlr78lxjw0ro" path="res://UI/AGAIN.png" id="9_wi8b0"]
 [ext_resource type="Texture2D" uid="uid://dk1o1a6qkos6v" path="res://UI/Trumb_head.png" id="11_ojo0d"]
 
@@ -96,6 +97,11 @@ centered = false
 [node name="click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_b6nm7")
 volume_db = 24.0
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_rg2e8")
+volume_db = 24.0
+autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false

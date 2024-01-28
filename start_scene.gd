@@ -42,6 +42,7 @@ func _on_exit_button_pressed():
 	get_tree().quit()
 
 func _on_start_button_pressed():
+	Global.is_2020 = true
 	click_sound.play()
 	var time0 = get_tree().create_timer(0.1)
 	await time0.timeout
