@@ -183,7 +183,7 @@ offset_right = 301.0
 offset_bottom = 222.0
 
 [node name="PlayerHP" type="Sprite2D" parent="." node_paths=PackedStringArray("_hps")]
-position = Vector2(2, 120)
+position = Vector2(40, 120)
 texture = ExtResource("34_ccysa")
 centered = false
 script = ExtResource("38_ssxds")
@@ -258,10 +258,11 @@ size_flags_vertical = 6
 texture = ExtResource("35_aoeqr")
 
 [node name="PlayerSprite2D" parent="." instance=ExtResource("33_163od")]
-position = Vector2(142, 524)
+position = Vector2(175, 520)
+scale = Vector2(5, 5)
 
 [node name="EnemyHP" type="Sprite2D" parent="." node_paths=PackedStringArray("_hps")]
-position = Vector2(1180, 120)
+position = Vector2(1140, 120)
 texture = ExtResource("34_ccysa")
 centered = false
 script = ExtResource("38_ssxds")
@@ -336,7 +337,8 @@ size_flags_vertical = 6
 texture = ExtResource("35_aoeqr")
 
 [node name="EnemySprite2D" parent="." instance=ExtResource("36_0u3lk")]
-position = Vector2(1143, 524)
+position = Vector2(1080, 520)
+scale = Vector2(-5, 5)
 
 [node name="PunchLineLabel" type="RichTextLabel" parent="."]
 visible = false
@@ -513,5 +515,7 @@ text = "INSULTING residential Debate 2020"
 label_settings = SubResource("LabelSettings_jkab6")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="GameOverPanel/TextureButton" to="." method="_on_button_pressed"]

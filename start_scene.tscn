@@ -1,10 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://clq3umec5nkdf"]
+[gd_scene load_steps=18 format=3 uid="uid://clq3umec5nkdf"]
 
 [ext_resource type="Script" path="res://start_scene.gd" id="1_ukghc"]
 [ext_resource type="Texture2D" uid="uid://dmj18rdqxg8nq" path="res://PNG/menu.png" id="2_v6svy"]
-[ext_resource type="Texture2D" uid="uid://2peof5twwbau" path="res://PNG/grey_button14.png" id="3_l076i"]
+[ext_resource type="Texture2D" uid="uid://du5uxdx8tf5a" path="res://PNG/grey_button00.png" id="3_n7sk6"]
+[ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="4_nviht"]
 [ext_resource type="Texture2D" uid="uid://b1ab7l1clogrx" path="res://PNG/grey_button15.png" id="4_sye6j"]
 [ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="5_b6nm7"]
+[ext_resource type="Texture2D" uid="uid://bo3e423bwth75" path="res://UI/icons8-language-30.png" id="6_4hcmx"]
+[ext_resource type="Texture2D" uid="uid://cjbqxjl2fhtki" path="res://UI/MAKE.png" id="6_5edl7"]
+[ext_resource type="Texture2D" uid="uid://bvbnrrlt1ihv" path="res://PNG/blue_button09.png" id="6_qk2xh"]
+[ext_resource type="Texture2D" uid="uid://c1dbivifwmel6" path="res://UI/John_head.png" id="6_tq3p5"]
+[ext_resource type="Texture2D" uid="uid://yms2b7e3icke" path="res://UI/AMERICA.png" id="7_3k7i4"]
+[ext_resource type="Texture2D" uid="uid://bheonftfncgik" path="res://UI/LAUGH.png" id="8_4tawd"]
+[ext_resource type="Texture2D" uid="uid://dqlr78lxjw0ro" path="res://UI/AGAIN.png" id="9_wi8b0"]
+[ext_resource type="Texture2D" uid="uid://dk1o1a6qkos6v" path="res://UI/Trumb_head.png" id="11_ojo0d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4n64r"]
+font = ExtResource("4_nviht")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_03gpq"]
+font = ExtResource("4_nviht")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xcns"]
+font = ExtResource("4_nviht")
+font_size = 24
 
 [node name="StartScene" type="Node2D"]
 script = ExtResource("1_ukghc")
@@ -15,11 +36,11 @@ offset_bottom = 720.0
 texture = ExtResource("2_v6svy")
 
 [node name="exit_button" type="TextureButton" parent="."]
-offset_left = 1046.0
-offset_top = 460.0
-offset_right = 1236.0
-offset_bottom = 509.0
-texture_normal = ExtResource("3_l076i")
+offset_left = 1048.0
+offset_top = 357.0
+offset_right = 1238.0
+offset_bottom = 406.0
+texture_normal = ExtResource("3_n7sk6")
 
 [node name="Label" type="Label" parent="exit_button"]
 modulate = Color(0, 0, 0, 1)
@@ -28,6 +49,7 @@ offset_left = -1.0
 offset_right = 189.0
 offset_bottom = 49.0
 text = " 退出"
+label_settings = SubResource("LabelSettings_4n64r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -44,46 +66,80 @@ layout_mode = 0
 offset_right = 190.0
 offset_bottom = 49.0
 text = "开始"
+label_settings = SubResource("LabelSettings_03gpq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="language_button" type="TextureButton" parent="."]
-offset_left = 1051.0
-offset_top = 360.0
-offset_right = 1241.0
-offset_bottom = 409.0
-texture_normal = ExtResource("4_sye6j")
+offset_left = 1056.0
+offset_top = 73.0
+offset_right = 1246.0
+offset_bottom = 122.0
+texture_normal = ExtResource("6_qk2xh")
 
 [node name="Label" type="Label" parent="language_button"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 187.0
-offset_bottom = 48.0
+offset_left = 52.0
+offset_top = 1.0
+offset_right = 198.0
+offset_bottom = 51.0
 text = "中文"
-horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_3xcns")
 vertical_alignment = 1
 
-[node name="title" type="Label" parent="."]
-visible = false
-offset_left = 500.0
-offset_top = 300.0
-offset_right = 650.0
-offset_bottom = 350.0
-text = "这是一个游戏"
+[node name="Sprite2D" type="Sprite2D" parent="language_button"]
+position = Vector2(8, 7)
+texture = ExtResource("6_4hcmx")
+centered = false
 
 [node name="click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_b6nm7")
 volume_db = 24.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 100.0
 offset_top = 284.0
 offset_right = 1008.0
 offset_bottom = 434.0
 bbcode_enabled = true
 text = "[font_size=64]Make A[color=yellow]me[/color]rica Lau[color=yellow]G[/color]h Again [/font_size]"
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Make" type="Sprite2D" parent="Title"]
+position = Vector2(266, 181)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_5edl7")
+
+[node name="America" type="Sprite2D" parent="Title"]
+position = Vector2(707, 180)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3k7i4")
+
+[node name="Laugh" type="Sprite2D" parent="Title"]
+position = Vector2(492, 339)
+texture = ExtResource("8_4tawd")
+
+[node name="Again" type="Sprite2D" parent="Title"]
+position = Vector2(678, 498)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_wi8b0")
+
+[node name="Head1" type="Sprite2D" parent="Title"]
+position = Vector2(130, 505)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tq3p5")
+
+[node name="Head2" type="Sprite2D" parent="Title"]
+position = Vector2(903, 401)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_ojo0d")
 
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

@@ -75,8 +75,9 @@ func start_banner_anim():
 	$StartBanner.position = START_FALL_POS 
 	var tween = create_tween()
 	tween.tween_property($StartBanner, "position", END_FALL_POS, 1).set_trans(Tween.TRANS_SPRING)
-	tween.tween_interval(1)
-	tween.tween_property($StartBanner, "modulate:a", 0, 1).set_ease(Tween.EASE_OUT)
+	tween.tween_interval(0.5)
+	tween.tween_property($StartBanner, "scale", Vector2(10, 10), 1).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property($StartBanner, "modulate:a", 0, 1).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(next_state)
 	
 func hide_game_over_panel():
