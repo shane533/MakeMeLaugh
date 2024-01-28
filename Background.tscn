@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1xesrkgh7yqc"]
+[gd_scene load_steps=11 format=3 uid="uid://c1xesrkgh7yqc"]
 
 [ext_resource type="Script" path="res://Background.gd" id="1_55f0s"]
 [ext_resource type="Texture2D" uid="uid://bjiunsg5sxsa6" path="res://PNG/background1.png" id="1_v4bsx"]
@@ -6,8 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dbsagv13rv7vr" path="res://PNG/Building2.png" id="3_vbupk"]
 [ext_resource type="Texture2D" uid="uid://cuq3vck0urev6" path="res://PNG/Building1.png" id="4_qe0u1"]
 [ext_resource type="Texture2D" uid="uid://ggw2etvw7d8k" path="res://PNG/window.png" id="5_8cxix"]
+[ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="7_yd3bl"]
 [ext_resource type="PackedScene" uid="uid://dvyvq1o5yq72w" path="res://walk_to_ground.tscn" id="8_sl2vx"]
 [ext_resource type="AudioStream" uid="uid://gnref65s4qjs" path="res://SFX/typing.mp3" id="9_c7mow"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsr77"]
+font = ExtResource("7_yd3bl")
+font_size = 55
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_55f0s")
@@ -40,12 +45,14 @@ offset_bottom = 582.5
 texture = ExtResource("5_8cxix")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 186.0
-offset_top = 93.0
-offset_right = 1091.0
-offset_bottom = 568.0
+offset_left = 290.0
+offset_top = 100.0
+offset_right = 1195.0
+offset_bottom = 575.0
+scale = Vector2(0.774496, 1)
 theme_override_font_sizes/font_size = 50
 text = "  在4202年的某天，川川来到了这里，danshi "
+label_settings = SubResource("LabelSettings_qsr77")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
