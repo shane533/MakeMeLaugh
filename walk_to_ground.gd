@@ -49,6 +49,4 @@ func _process(delta):
 		enemy_sprite2D.play("idle")
 	else:
 		enemy_sprite2D.play("walk")
-	
-	#elif player_sprite2D.position.x == 175:
-		#player_sprite2D.play("idle")
+
