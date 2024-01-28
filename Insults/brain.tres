@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://duhwtlj25bjus"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_4hklf"]
+
+[resource]
+script = ExtResource("1_4hklf")
+_id = 108
+_contentEN = "You're no match for my brains, you poor fool."
+_contentZH = "跟你pk我都不用动脑，你个可怜的傻瓜"
+_responses = Array[int]([208])

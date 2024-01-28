@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=85 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -13,9 +13,11 @@
 [ext_resource type="Resource" uid="uid://bslicd3ya36ul" path="res://Responses/idiot.tres" id="8_jihh8"]
 [ext_resource type="Resource" uid="uid://1posbp5jgary" path="res://Insults/builder.tres" id="8_n41dw"]
 [ext_resource type="Resource" uid="uid://cwdlkhgt06r5m" path="res://Insults/covid.tres" id="8_tq2c0"]
+[ext_resource type="Resource" uid="uid://duhwtlj25bjus" path="res://Insults/brain.tres" id="9_8k1xs"]
 [ext_resource type="Resource" uid="uid://ba0tu4v7cc7rk" path="res://Insults/son.tres" id="9_bt2gn"]
 [ext_resource type="Resource" uid="uid://d0k25sa3xstk3" path="res://Responses/lullaby.tres" id="9_p7gqr"]
 [ext_resource type="Resource" uid="uid://v76pi8rx3in5" path="res://Responses/reunion.tres" id="10_1dccu"]
+[ext_resource type="Resource" uid="uid://c80hkutybomm" path="res://Insults/sitting.tres" id="10_cllio"]
 [ext_resource type="Resource" uid="uid://0p76cclwwq40" path="res://Insults/rising.tres" id="10_dk2fr"]
 [ext_resource type="Resource" uid="uid://ciytv2mac42wc" path="res://Insults/parrot.tres" id="11_h4kmi"]
 [ext_resource type="Resource" uid="uid://bew4md5udeisd" path="res://Responses/taught.tres" id="11_ku1dh"]
@@ -29,16 +31,20 @@
 [ext_resource type="Resource" uid="uid://cvvkqk4nnc18" path="res://Responses/bathroom.tres" id="15_o12kc"]
 [ext_resource type="Resource" uid="uid://dtc41arvd0lda" path="res://Responses/notes.tres" id="16_nhm88"]
 [ext_resource type="Resource" uid="uid://bctf8pie0kodb" path="res://Responses/where.tres" id="17_pdeto"]
+[ext_resource type="Resource" uid="uid://c2d64o5ri04hm" path="res://Insults/economy.tres" id="20_v3tv3"]
 [ext_resource type="Resource" uid="uid://bme2f3geg5ttp" path="res://Responses/comfortable.tres" id="21_tegw8"]
 [ext_resource type="Resource" uid="uid://csdh2bxky1hc5" path="res://Responses/inflation.tres" id="22_ska3p"]
 [ext_resource type="Resource" uid="uid://bgeyd0e2d7l6d" path="res://Responses/president.tres" id="23_qkt2l"]
 [ext_resource type="Resource" uid="uid://b301qyf2qnhr5" path="res://Responses/jail.tres" id="23_s5811"]
 [ext_resource type="Resource" uid="uid://cs2f12sdjl46w" path="res://Responses/learn.tres" id="24_6se8b"]
 [ext_resource type="Resource" uid="uid://bdo5vg48dr4lg" path="res://Responses/understand.tres" id="24_kf3dx"]
+[ext_resource type="Resource" uid="uid://byq14t72qslyo" path="res://Responses/flaring.tres" id="27_cue8k"]
+[ext_resource type="Resource" uid="uid://dapmmcc3x4pbp" path="res://Responses/use.tres" id="28_s24jb"]
 [ext_resource type="Texture2D" uid="uid://dwrfehoaxayu2" path="res://PNG/Building3.png" id="32_6dmmv"]
 [ext_resource type="Texture2D" uid="uid://dni4i7dljbq1l" path="res://UI/webpage.png" id="32_tbux1"]
 [ext_resource type="PackedScene" uid="uid://c8jqjyqs7b5rj" path="res://player_sprite_2d.tscn" id="33_163od"]
 [ext_resource type="Texture2D" uid="uid://dbsagv13rv7vr" path="res://PNG/Building2.png" id="33_mko7v"]
+[ext_resource type="Resource" uid="uid://ch8eaiyl4i414" path="res://Responses/russia.tres" id="34_4nwp7"]
 [ext_resource type="Texture2D" uid="uid://cuq3vck0urev6" path="res://PNG/Building1.png" id="34_6ix10"]
 [ext_resource type="Texture2D" uid="uid://co6a8mlbblvdr" path="res://UI/hp_bar_2.png" id="34_ccysa"]
 [ext_resource type="Texture2D" uid="uid://j4en0053cfve" path="res://UI/hp_bar_1.png" id="35_aoeqr"]
@@ -153,11 +159,11 @@ font_size = 24
 
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_panel", "insult_label_", "response_panel", "response_label_", "player_hp", "enemy_hp")]
 script = ExtResource("1_58qa0")
-insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_pfpcq"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q"), ExtResource("7_1nuas"), ExtResource("8_n41dw")])
+insults_don = Array[Resource("res://insult.gd")]([ExtResource("2_pfpcq"), ExtResource("3_4hrsk"), ExtResource("4_wj31x"), ExtResource("5_fmjxt"), ExtResource("6_4s80q"), ExtResource("7_1nuas"), ExtResource("8_n41dw"), ExtResource("9_8k1xs"), ExtResource("10_cllio")])
 insults_joe_2020 = Array[Resource("res://insult.gd")]([ExtResource("7_gk7bb"), ExtResource("8_tq2c0")])
-insults_joe_2024 = Array[Resource("res://insult.gd")]([ExtResource("9_bt2gn"), ExtResource("10_dk2fr"), ExtResource("11_h4kmi"), ExtResource("12_7ka5i"), ExtResource("2_ulf60"), ExtResource("14_qnee8"), ExtResource("15_l6xmc")])
-responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("23_s5811"), ExtResource("24_6se8b")])
-responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("21_tegw8"), ExtResource("22_ska3p"), ExtResource("23_qkt2l"), ExtResource("24_kf3dx")])
+insults_joe_2024 = Array[Resource("res://insult.gd")]([ExtResource("9_bt2gn"), ExtResource("10_dk2fr"), ExtResource("11_h4kmi"), ExtResource("12_7ka5i"), ExtResource("2_ulf60"), ExtResource("14_qnee8"), ExtResource("15_l6xmc"), ExtResource("20_v3tv3")])
+responses_joe = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("23_s5811"), ExtResource("24_6se8b"), ExtResource("27_cue8k"), ExtResource("28_s24jb")])
+responses_don = Array[Resource("res://response.gd")]([ExtResource("7_iorqj"), ExtResource("8_jihh8"), ExtResource("9_p7gqr"), ExtResource("10_1dccu"), ExtResource("11_ku1dh"), ExtResource("21_tegw8"), ExtResource("22_ska3p"), ExtResource("23_qkt2l"), ExtResource("24_kf3dx"), ExtResource("34_4nwp7")])
 default_responses_don = Array[Resource("res://response.gd")]([ExtResource("12_ljpic"), ExtResource("13_y0or7"), ExtResource("14_dlp4g")])
 default_responses_joe = Array[Resource("res://response.gd")]([ExtResource("15_o12kc"), ExtResource("16_nhm88"), ExtResource("17_pdeto")])
 insult_panel = NodePath("Insult")

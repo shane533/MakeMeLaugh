@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://ch8eaiyl4i414"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_vtpy1"]
+
+[resource]
+script = ExtResource("1_vtpy1")
+_id = 218
+_contentEN = "Great for Russia?"
+_contentZH = "俄国人的经济？"

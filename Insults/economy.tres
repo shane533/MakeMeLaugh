@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://c2d64o5ri04hm"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_w5d6k"]
+
+[resource]
+script = ExtResource("1_w5d6k")
+_id = 308
+_contentEN = "Biden economy is doing great"
+_contentZH = "拜登经济学蒸蒸日上"
+_responses = Array[int]([218])

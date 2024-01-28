@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Insult" load_steps=2 format=3 uid="uid://c80hkutybomm"]
+
+[ext_resource type="Script" path="res://insult.gd" id="1_ihhil"]
+
+[resource]
+script = ExtResource("1_ihhil")
+_id = 104
+_contentEN = "I'm not going to take your insolence sitting down!"
+_contentZH = "你的愚蠢让我坐立难安"
+_responses = Array[int]([204])

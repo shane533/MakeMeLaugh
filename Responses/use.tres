@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Response" load_steps=2 format=3 uid="uid://dapmmcc3x4pbp"]
+
+[ext_resource type="Script" path="res://response.gd" id="1_qhgrw"]
+
+[resource]
+script = ExtResource("1_qhgrw")
+_id = 208
+_contentEN = "I'd be in real trouble if you ever used them."
+_contentZH = "如果你能用用脑子，我才会有麻烦"
