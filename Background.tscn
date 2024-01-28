@@ -55,7 +55,7 @@ text = "  在4202年的某天，川川来到了这里，danshi "
 label_settings = SubResource("LabelSettings_qsr77")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="typing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_c7mow")

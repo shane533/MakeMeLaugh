@@ -13,7 +13,7 @@ config_version=5
 config/name="Make America Laugh Again"
 run/main_scene="res://start_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://PNG/icon.png"
+config/icon="res://PNG/icon256.png"
 
 [autoload]
 
