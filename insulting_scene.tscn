@@ -398,7 +398,7 @@ offset_bottom = 56.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Response" type="Node2D" parent="."]
 position = Vector2(448, 206)
@@ -416,7 +416,7 @@ offset_bottom = 57.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="GameOverPanel" type="Panel" parent="."]
 offset_left = 369.0
