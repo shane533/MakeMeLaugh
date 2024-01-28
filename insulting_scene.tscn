@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=86 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://cp5a48borb3yt" path="res://UI/MAGA_frame.png" id="44_i30td"]
 [ext_resource type="Texture2D" uid="uid://cdvgpt4tcv78c" path="res://UI/US.png" id="45_orpng"]
 [ext_resource type="Texture2D" uid="uid://ddv0w86xaow1" path="res://PNG/grey_button01.png" id="46_khu8v"]
+[ext_resource type="Texture2D" uid="uid://b2yxshhipdgdp" path="res://UI/bidenvstrump.png" id="46_sbgch"]
 [ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="46_uv2sf"]
 [ext_resource type="Texture2D" uid="uid://djdjtena0vebi" path="res://PNG/grey_button02.png" id="47_wmb5g"]
 [ext_resource type="AudioStream" uid="uid://b064ioqtww572" path="res://SFX/BGM.mp3" id="52_p7qmc"]
@@ -195,6 +196,14 @@ centered = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("32_tbux1")
 centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Webpage"]
+self_modulate = Color(1, 1, 1, 0.313726)
+position = Vector2(186, 107)
+scale = Vector2(0.650714, 0.668056)
+texture = ExtResource("46_sbgch")
+centered = false
+flip_h = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/Webpage"]
 offset_left = 261.0
