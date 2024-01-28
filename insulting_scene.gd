@@ -81,6 +81,7 @@ func start_banner_anim():
 	tween.tween_callback(next_state)
 	
 func hide_game_over_panel():
+	$CreditsPanel.visible = false
 	$GameOverPanel.visible = false
 
 func init_hps():
@@ -193,7 +194,7 @@ func player_insulting() -> GameState:
 	
 func enemy_responsing() -> GameState:
 	#if enemy must won
-	if _global.is_2020 or randi()%3==0:
+	if _global.is_2020 or randi()%4==0:
 		var res_id = _selecting_insult._responses[0]
 		_selecting_response = get_response_by_id(res_id)
 	else:
@@ -234,12 +235,14 @@ func finish_responsing():
 func init_insult_label(ins: Insult, from_left: bool):
 	insult_panel.visible = true
 	insult_label_.text = get_insult_content(ins)
+	insult_label_.label_settings.font_size = 32 if Global.is_ZH else 24
 	insult_panel.position = LEFT_POS if from_left else RIGHT_POS
 	insult_panel.scale = Vector2(0.2, 0.2)
 	add_dialog(from_left, get_insult_content(ins))
 	
 func init_response_label(res: Response, from_left: bool):
 	response_panel.visible = true
+	response_label_.label_settings.font_size = 32 if Global.is_ZH else 24
 	response_label_.text = get_response_content(res)
 	response_panel.position = LEFT_POS if from_left else RIGHT_POS
 	response_panel.scale = Vector2(0.2, 0.2)
@@ -463,8 +466,12 @@ func _on_button_pressed():
 		if _player_hp == 0:
 			game_start(randi()%2==0)
 		else:
+			show_credits_panel()
 			print("WIN, show credits")
 	pass # Replace with function body.
+
+func show_credits_panel():
+	$CreditsPanel.visible = true	
 	
 func init_audiences():
 	debug("Init Audiences")
@@ -543,3 +550,9 @@ func add_dialog(is_trump:bool, text:String):
 	dialog.init(is_trump, text)
 	$Background/Webpage/VBoxContainer.add_child(dialog)
 	_dialogs.push_back(dialog)
+
+
+func _on_return_button_pressed():
+	var path = "res://start_scene.tscn"
+	get_tree().change_scene_to_file(path)
+	pass # Replace with function body.

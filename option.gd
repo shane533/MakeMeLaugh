@@ -9,6 +9,7 @@ var _id: int
 
 func init(id: int, text: String):
 	_id = id
+	$Label.label_settings.font_size = 24 if Global.is_ZH else 18
 	$Label.text = text
 
 # Called when the node enters the scene tree for the first time.

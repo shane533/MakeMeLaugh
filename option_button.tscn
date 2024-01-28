@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="4_57k1v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iu6nd"]
+line_spacing = 1.0
 font = ExtResource("4_57k1v")
 font_size = 24
 font_color = Color(0, 0, 1, 1)
@@ -34,5 +35,6 @@ offset_bottom = 42.0
 text = "xxxx"
 label_settings = SubResource("LabelSettings_iu6nd")
 vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://dp83ylqs4isw0"]
+[gd_scene load_steps=79 format=3 uid="uid://dp83ylqs4isw0"]
 
 [ext_resource type="Script" path="res://insulting_scene.gd" id="1_58qa0"]
 [ext_resource type="Resource" uid="uid://cq8mps7nn7vs7" path="res://Insults/line.tres" id="2_pfpcq"]
@@ -44,7 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://j4en0053cfve" path="res://UI/hp_bar_1.png" id="35_aoeqr"]
 [ext_resource type="PackedScene" uid="uid://bcj6culq70bj1" path="res://enemy_sprite_2d.tscn" id="36_0u3lk"]
 [ext_resource type="Script" path="res://hp_bar.gd" id="38_ssxds"]
-[ext_resource type="AudioStream" uid="uid://ge3m0xaqbjig" path="res://SFX/8-bit-arcade-138828.mp3" id="40_tpnsh"]
 [ext_resource type="FontFile" uid="uid://dpbs6bnmcq0ud" path="res://UI/MZPXorig.ttf" id="41_dvdmw"]
 [ext_resource type="AudioStream" uid="uid://cdpfuvxn50vje" path="res://SFX/hissing.mp3" id="41_hqooc"]
 [ext_resource type="AudioStream" uid="uid://csi2ktjfv337k" path="res://SFX/crowd_shocked.wav" id="42_sgxbe"]
@@ -56,12 +55,14 @@
 [ext_resource type="Texture2D" uid="uid://ddv0w86xaow1" path="res://PNG/grey_button01.png" id="46_khu8v"]
 [ext_resource type="AudioStream" uid="uid://bm0oov672vqou" path="res://SFX/click1.ogg" id="46_uv2sf"]
 [ext_resource type="Texture2D" uid="uid://djdjtena0vebi" path="res://PNG/grey_button02.png" id="47_wmb5g"]
+[ext_resource type="AudioStream" uid="uid://b064ioqtww572" path="res://SFX/BGM.mp3" id="52_p7qmc"]
 [ext_resource type="AudioStream" uid="uid://llnt8mxq8uij" path="res://SFX/CHINA1.mp3" id="53_t1h3o"]
 [ext_resource type="AudioStream" uid="uid://dvv1ldhdoid6w" path="res://SFX/CHINA2.mp3" id="54_jxllo"]
 [ext_resource type="AudioStream" uid="uid://celuarnvmwmap" path="res://SFX/CHINA4.mp3" id="55_g08yd"]
 [ext_resource type="AudioStream" uid="uid://doal50hjk3ebv" path="res://SFX/EHH1.mp3" id="56_hb35s"]
 [ext_resource type="AudioStream" uid="uid://d0bxkn1on0lmf" path="res://SFX/EHH2.mp3" id="57_mp1tv"]
-[ext_resource type="AudioStream" uid="uid://bo8xwcwjejqcy" path="res://SFX/EHH3.mp3" id="58_cixn0"]
+[ext_resource type="AudioStream" uid="uid://v2rad8xnc6am" path="res://SFX/DAMN.mp3" id="62_8p5yk"]
+[ext_resource type="Texture2D" uid="uid://c4qvasyp5y20g" path="res://UI/credit_panel.png" id="64_jsa61"]
 [ext_resource type="Texture2D" uid="uid://bfdt6khcki2a0" path="res://Freebie Pixel Emojis.png" id="73_x8cj3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vqcop"]
@@ -136,6 +137,19 @@ animations = [{
 font = ExtResource("41_dvdmw")
 font_size = 36
 outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0ivl"]
+font = ExtResource("41_dvdmw")
+font_size = 42
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_kfup7"]
+font = ExtResource("41_dvdmw")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_quakj"]
+font = ExtResource("41_dvdmw")
+font_size = 24
 
 [node name="InsultingScene" type="Node2D" node_paths=PackedStringArray("insult_panel", "insult_label_", "response_panel", "response_label_", "player_hp", "enemy_hp")]
 script = ExtResource("1_58qa0")
@@ -373,11 +387,12 @@ centered = false
 
 [node name="InsultLabel" type="Label" parent="Insult"]
 offset_top = -10.0
-offset_right = 528.0
-offset_bottom = 58.0
+offset_right = 458.0
+offset_bottom = 56.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Response" type="Node2D" parent="."]
 position = Vector2(448, 206)
@@ -390,8 +405,8 @@ centered = false
 
 [node name="ResponseLabel" type="Label" parent="Response"]
 offset_top = -10.0
-offset_right = 528.0
-offset_bottom = 58.0
+offset_right = 452.0
+offset_bottom = 57.0
 text = "怎么，你想借一条用吗？"
 label_settings = SubResource("LabelSettings_vqcop")
 vertical_alignment = 1
@@ -457,7 +472,7 @@ horizontal_alignment = 1
 [node name="SFX" type="Node" parent="."]
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("40_tpnsh")
+stream = ExtResource("52_p7qmc")
 autoplay = true
 
 [node name="HissSFX" type="AudioStreamPlayer" parent="SFX"]
@@ -484,12 +499,15 @@ stream = ExtResource("55_g08yd")
 
 [node name="EHH1SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("56_hb35s")
+volume_db = 12.0
 
 [node name="EHH2SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("57_mp1tv")
+volume_db = 12.0
 
 [node name="EHH3SFX" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("58_cixn0")
+stream = ExtResource("62_8p5yk")
+volume_db = 12.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -516,6 +534,84 @@ label_settings = SubResource("LabelSettings_jkab6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CreditsPanel" type="Sprite2D" parent="."]
+position = Vector2(368, 19)
+texture = ExtResource("64_jsa61")
+centered = false
+
+[node name="Label4" type="Label" parent="CreditsPanel"]
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 453.0
+offset_bottom = 120.0
+text = "Thank you for playing"
+label_settings = SubResource("LabelSettings_e0ivl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel"]
+offset_left = 60.0
+offset_top = 131.0
+offset_right = 380.0
+offset_bottom = 201.0
+text = "策划：莱斯
+Designer: 莱斯"
+label_settings = SubResource("LabelSettings_kfup7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CreditsPanel"]
+offset_left = 60.0
+offset_top = 222.0
+offset_right = 380.0
+offset_bottom = 292.0
+text = "程序：苏杭霖
+Progrommer: 沐风addion"
+label_settings = SubResource("LabelSettings_kfup7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditsPanel"]
+offset_left = 60.0
+offset_top = 311.0
+offset_right = 389.0
+offset_bottom = 380.0
+text = "程序：浩汤
+Progrommer: shane533"
+label_settings = SubResource("LabelSettings_kfup7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CreditsPanel"]
+offset_left = 61.0
+offset_top = 390.0
+offset_right = 390.0
+offset_bottom = 459.0
+text = "Free assets from:
+Kenneys, Mucho Pixels, etc"
+label_settings = SubResource("LabelSettings_quakj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CreditsPanel"]
+offset_left = 139.0
+offset_top = 477.0
+offset_right = 329.0
+offset_bottom = 526.0
+texture_normal = ExtResource("46_khu8v")
+texture_pressed = ExtResource("47_wmb5g")
+
+[node name="Label" type="Label" parent="CreditsPanel/TextureButton"]
+custom_minimum_size = Vector2(120, 2.08165e-12)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 185.0
+offset_bottom = 39.0
+text = "RETURN
+"
+label_settings = SubResource("LabelSettings_32oxy")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="GameOverPanel/TextureButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CreditsPanel/TextureButton" to="." method="_on_return_button_pressed"]
