@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="MakeMeLaugh"
+config/name="Make America Laugh Again"
 run/main_scene="res://start_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://PNG/icon.png"
 
 [autoload]
 
